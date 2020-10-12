@@ -12,13 +12,13 @@
     </startup>
   </adf-adfm-config>
   <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
-    <adf-property name="adfAppUID" value="GenxLogin-8405"/>
+    <adf-property name="adfAppUID" value="GenxApp-3248"/>
   </adf:adf-properties-child>
   <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
     <sec:JaasSecurityContext initialContextFactoryClass="oracle.adf.share.security.JAASInitialContextFactory"
                              jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
                              authorizationEnforce="true" authenticationRequire="true"/>
-    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
-                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
   </sec:adf-security-child>
 </adf-config>

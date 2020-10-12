@@ -108,7 +108,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="GenxLogin_Model">
+         <hash n="GenxApp_Model">
             <value n="adflib-connectionDetails" v="true"/>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -142,12 +142,12 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/GenxLogin_Model.jar"/>
+            <url n="jarURL" path="deploy/GenxApp_Model.jar"/>
             <hash n="LibraryDependencies"/>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="GenxLogin_Model"/>
+            <value n="profileName" v="GenxApp_Model"/>
          </hash>
-         <hash n="GenxLogin_Model_adflib">
+         <hash n="GenxApp_Model_adflib">
             <value n="adflib-connectionDetails" v="true"/>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -181,20 +181,20 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/GenxLogin_Model_adflib.jar"/>
+            <url n="jarURL" path="deploy/GenxApp_Model_adflib.jar"/>
             <hash n="LibraryDependencies"/>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="GenxLogin_Model_adflib"/>
+            <value n="profileName" v="GenxApp_Model_adflib"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="GenxLogin_Model_adflib"/>
-         <string v="GenxLogin_Model"/>
+         <string v="GenxApp_Model_adflib"/>
+         <string v="GenxApp_Model"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="GenxLogin-Model-webapp"/>
-      <value n="j2eeWebContextRoot" v="GenxLogin-Model-context-root"/>
+      <value n="j2eeWebAppName" v="GenxApp-Model-webapp"/>
+      <value n="j2eeWebContextRoot" v="GenxApp-Model-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">

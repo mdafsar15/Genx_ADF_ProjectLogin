@@ -2,10 +2,12 @@ package view.backing;
 
 import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
+import oracle.adf.view.rich.component.rich.fragment.RichRegion;
 
-public class Departments {
+public class Run {
     private RichForm f1;
     private RichDocument d1;
+    private RichRegion r1;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -21,5 +23,13 @@ public class Departments {
 
     public RichDocument getD1() {
         return d1;
+    }
+
+    public void setR1(RichRegion r1) {
+        this.r1 = r1;
+    }
+
+    public RichRegion getR1() {
+        return r1;
     }
 }

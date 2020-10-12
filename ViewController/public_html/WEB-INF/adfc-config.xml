@@ -1,52 +1,27 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <view id="Welcome">
-    <page>/Welcome.jsf</page>
-  </view>
-  <view id="Employees">
-    <page>/Employees.jsf</page>
-  </view>
-  <view id="Departments">
-    <page>/Departments.jsf</page>
-  </view>
-  <control-flow-rule id="__2">
-    <from-activity-id>Welcome</from-activity-id>
-    <control-flow-case id="__3">
-      <from-outcome>emp</from-outcome>
-      <to-activity-id>Employees</to-activity-id>
-    </control-flow-case>
-    <control-flow-case id="__4">
-      <from-outcome>dept</from-outcome>
-      <to-activity-id>Departments</to-activity-id>
-    </control-flow-case>
-  </control-flow-rule>
   <managed-bean id="__1">
     <managed-bean-name>backing_Welcome</managed-bean-name>
     <managed-bean-class>view.backing.Welcome</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
-    <!--oracle-jdev-comment:managed-bean-jsp-link:1Welcome.jsf-->
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Welcome.jspx-->
   </managed-bean>
   <managed-bean id="__5">
-    <managed-bean-name>backing_Employees</managed-bean-name>
-    <managed-bean-class>view.backing.Employees</managed-bean-class>
+    <managed-bean-name>backing_Welcome2</managed-bean-name>
+    <managed-bean-class>view.backing.Welcome2</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
-    <!--oracle-jdev-comment:managed-bean-jsp-link:1Employees.jsf-->
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Welcome.jspx-->
   </managed-bean>
   <managed-bean id="__6">
-    <managed-bean-name>backing_Departments</managed-bean-name>
-    <managed-bean-class>view.backing.Departments</managed-bean-class>
+    <managed-bean-name>backing_Employee</managed-bean-name>
+    <managed-bean-class>view.backing.Employee</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
-    <!--oracle-jdev-comment:managed-bean-jsp-link:1Departments.jsf-->
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Employee.jspx-->
   </managed-bean>
   <managed-bean id="__7">
-    <managed-bean-name>MyProject</managed-bean-name>
-    <managed-bean-class>view.Popup</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-  <managed-bean id="__8">
-    <managed-bean-name>backing_Employees2</managed-bean-name>
-    <managed-bean-class>view.backing.Employees2</managed-bean-class>
+    <managed-bean-name>backing_Run</managed-bean-name>
+    <managed-bean-class>view.backing.Run</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
-    <!--oracle-jdev-comment:managed-bean-jsp-link:1Employees.jsf-->
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Run.jspx-->
   </managed-bean>
 </adfc-config>

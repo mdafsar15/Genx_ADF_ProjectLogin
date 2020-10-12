@@ -6,10 +6,10 @@
             <name>jazn.com</name>
             <users>
                 <user>
-                    <name>user1</name>
-                    <credentials>{903}18FRAQP70sPMAjoObVTyRYOnJs3xn2OF+Ix+Bg/YmMI=</credentials>
-                    <display-name>Genx Project</display-name>
-                    <description>Genx Project Login</description>
+                    <name>genx</name>
+                    <credentials>{903}Kd+7xNzklYnU6Z3Mwasgj7jGrDUPjLNhVmFkCDCoBio=</credentials>
+                    <display-name>Genx</display-name>
+                    <description>Genx Project</description>
                 </user>
             </users>
         </realm>
@@ -17,7 +17,7 @@
     <policy-store>
         <applications>
             <application>
-                <name>GenxLogin</name>
+                <name>GenxApp</name>
                 <app-roles>
                     <app-role>
                         <name>Admin</name>
@@ -26,7 +26,7 @@
                         <members>
                             <member>
                                 <class>oracle.security.jps.internal.core.principals.JpsXmlUserImpl</class>
-                                <name>user1</name>
+                                <name>genx</name>
                             </member>
                         </members>
                     </app-role>
@@ -44,17 +44,17 @@
                         <permissions>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>view.pageDefs.WelcomePageDef</name>
+                                <name>view.pageDefs.RunPageDef</name>
                                 <actions>view</actions>
                             </permission>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>view.pageDefs.DepartmentsPageDef</name>
+                                <name>view.pageDefs.EmployeePageDef</name>
                                 <actions>view</actions>
                             </permission>
                             <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>view.pageDefs.EmployeesPageDef</name>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/emp-dept-btf.xml#emp-dept-btf</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>

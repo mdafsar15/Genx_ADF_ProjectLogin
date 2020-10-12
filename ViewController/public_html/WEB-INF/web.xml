@@ -28,7 +28,7 @@
     <servlet-class>oracle.adf.share.security.authentication.AuthenticationServlet</servlet-class>
     <init-param>
       <param-name>success_url</param-name>
-      <param-value>/faces/Welcome.jsf</param-value>
+      <param-value>/faces/Run.jspx</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -157,10 +157,6 @@
     <param-name>javax.faces.FACELETS_RESOURCE_RESOLVER</param-name>
     <param-value>oracle.adfinternal.view.faces.facelets.rich.AdfFaceletsResourceResolver</param-value>
   </context-param>
-  <context-param>
-    <param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>
-    <param-value>*.jsf;*.xhtml</param-value>
-  </context-param>
   <mime-mapping>
     <extension>swf</extension>
     <mime-type>application/x-shockwave-flash</mime-type>
@@ -178,6 +174,12 @@
   <listener>
     <listener-class>oracle.bc4j.mbean.BC4JConfigLifeCycleCallBack</listener-class>
   </listener>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsff</url-pattern>
+      <is-xml>true</is-xml>
+    </jsp-property-group>
+  </jsp-config>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>adfAuthentication</web-resource-name>

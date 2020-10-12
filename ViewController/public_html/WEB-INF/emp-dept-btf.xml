@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp-dept-btf">
+    <default-activity>Welcome</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__4">
+      <managed-bean-name>empBean</managed-bean-name>
+      <managed-bean-class>view.Employee</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>deptBean</managed-bean-name>
+      <managed-bean-class>view.Department</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <view id="Welcome">
+      <page>/Welcome.jsff</page>
+    </view>
+    <view id="Employees">
+      <page>/Employees.jsff</page>
+    </view>
+    <view id="Departments">
+      <page>/Departments.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>Welcome</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>emp</from-outcome>
+        <to-activity-id>Employees</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>dept</from-outcome>
+        <to-activity-id>Departments</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

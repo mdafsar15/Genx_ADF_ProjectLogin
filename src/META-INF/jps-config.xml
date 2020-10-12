@@ -111,8 +111,8 @@
          <property name="addAllRoles" value="true"/>
       </serviceInstance>
    </serviceInstances>
-   <jpsContexts default="GenxLogin">
-      <jpsContext name="GenxLogin">
+   <jpsContexts default="GenxApp">
+      <jpsContext name="GenxApp">
          <serviceInstanceRef ref="idstore.xml"/>
          <serviceInstanceRef ref="credstore"/>
          <serviceInstanceRef ref="anonymous"/>
