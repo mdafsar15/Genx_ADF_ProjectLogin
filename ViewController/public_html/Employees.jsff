@@ -20,6 +20,7 @@
         </af:button>
         <af:button text="Back To Welcome" id="b5" action="returnEmp"/>
         <af:button text="Back To Department" id="b6" action="backToDept"/>
+        <input type="search" name="Search" formaction="${bindings.variables.findMode}"/>
       </af:toolbar>
     </f:facet>
     <f:facet name="bottom"/>

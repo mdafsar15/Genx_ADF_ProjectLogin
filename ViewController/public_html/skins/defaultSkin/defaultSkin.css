@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.myCustomBox af|inputText::content{
+    color: Lime;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.myCustomBox af|inputText::label{
+    color: Aqua;
+    font-size: 16px;
+    
+}
+
+.myCustomBox af|outputText::content{
+    color: Aqua;
+    font-size: 16px;
+    
+}

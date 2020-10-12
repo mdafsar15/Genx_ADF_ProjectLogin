@@ -12,6 +12,7 @@
     <page path="/Employees.jsff" usageId="view_EmployeesPageDef"/>
     <page path="/Departments.jsff" usageId="view_DepartmentsPageDef"/>
     <page path="/Welcome.jsff" usageId="view_WelcomePageDef"/>
+    <page path="/Search.jsff" usageId="view_SearchPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_EmployeePageDef" path="view.pageDefs.EmployeePageDef"/>
@@ -19,6 +20,7 @@
     <page id="view_EmployeesPageDef" path="view.pageDefs.EmployeesPageDef"/>
     <page id="view_DepartmentsPageDef" path="view.pageDefs.DepartmentsPageDef"/>
     <page id="view_WelcomePageDef" path="view.pageDefs.WelcomePageDef"/>
+    <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"

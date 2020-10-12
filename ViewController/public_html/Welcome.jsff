@@ -9,9 +9,17 @@
         <af:button text="Department" id="b2" action="dept" inlineStyle="font-size:xx-large;"/>
       </af:panelGroupLayout>
     </f:facet>
-    <f:facet name="top"/>
+    <f:facet name="top">
+      <af:toolbar id="t1">
+        <af:outputText value="#{'Welcome&#160;'}#{securityContext.userName}#{',&#160;'}" id="ot1"
+                       inlineStyle="font-size:large;"/>
+        <af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
+                 inlineStyle="font-size:x-large;"/>
+      </af:toolbar>
+    </f:facet>
     <f:facet name="bottom">
-      <f:verbatim>GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms. With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs. Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards. Artificial Intelligence/ Machine Learning... Blockchain...</f:verbatim>
+      <af:outputText value="GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms.  With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs.  Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards.  Artificial Intelligence/ Machine Learning... Blockchain..." id="ot2"
+                     styleClass="myCustomBox" inlineStyle="font-size:x-large;"/>
     </f:facet>
     <f:facet name="center">
       <af:panelGroupLayout id="pgl2">
