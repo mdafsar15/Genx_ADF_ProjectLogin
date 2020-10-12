@@ -1,15 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelStretchLayout id="psl1">
+  <af:panelStretchLayout id="psl1" endWidth="591px" bottomHeight="587px">
     <f:facet name="start"/>
-    <f:facet name="end"/>
-    <f:facet name="top"/>
-    <f:facet name="bottom"/>
-    <f:facet name="center">
+    <f:facet name="end">
       <af:panelGroupLayout id="pgl1">
-        <af:button text="Employee" id="b1" action="emp"/>
-        <af:button text="Department" id="b2" action="dept"/>
+        <af:button text="Employee" id="b1" action="emp" inlineStyle="font-size:xx-large;"/>
+        <af:button text="Department" id="b2" action="dept" inlineStyle="font-size:xx-large;"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top"/>
+    <f:facet name="bottom">
+      <f:verbatim>GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms. With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs. Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards. Artificial Intelligence/ Machine Learning... Blockchain...</f:verbatim>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl2">
+        <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo" id="i1"/>
       </af:panelGroupLayout>
     </f:facet>
   </af:panelStretchLayout>

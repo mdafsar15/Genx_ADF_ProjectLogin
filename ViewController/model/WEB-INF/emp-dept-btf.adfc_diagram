@@ -75,4 +75,44 @@
       <property
          name="sdm:polyPoints">R54,139.0,215.0459,327.0,298.24707,L50</property>
    </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">returnEmp</property>
+      <property
+         name="sdm:polyPoints">L54,322.0,128.44824,140.51486,211.5459,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View4"
+      to="View2">
+      <property
+         name="fromOutcome">returnDept</property>
+      <property
+         name="sdm:polyPoints">L54,325.57248,301.74707,139.0,222.0459,R62</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View3"
+      to="View4">
+      <property
+         name="fromOutcome">backToDept</property>
+      <property
+         name="sdm:polyPoints">B50,363.0,178.94824,368.0,244.24707,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="View4"
+      to="View3">
+      <property
+         name="fromOutcome">backToEmp</property>
+      <property
+         name="sdm:polyPoints">T56,371.5,243.97891,366.5,178.94824,B56</property>
+   </ControlFlowCase>
 </SDM>

@@ -7,16 +7,10 @@
     <iterator Binds="DepartmentsVO1" RangeSize="25" DataControl="AppModuleDataControl" id="DepartmentsVO1Iterator"/>
   </executables>
   <bindings>
-    <tree IterBinding="DepartmentsVO1Iterator" id="DepartmentsVO1">
-      <nodeDefinition DefName="model.DepartmentsVO" Name="DepartmentsVO10">
-        <AttrNames>
-          <Item Value="DepartmentId"/>
-          <Item Value="DepartmentName"/>
-          <Item Value="ManagerId"/>
-          <Item Value="LocationId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <action IterBinding="DepartmentsVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.DepartmentsVO1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
     <attributeValues IterBinding="DepartmentsVO1Iterator" id="DepartmentId">
       <AttrNames>
         <Item Value="DepartmentId"/>
@@ -37,9 +31,15 @@
         <Item Value="LocationId"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="DepartmentsVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.DepartmentsVO1"
-            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
-    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <tree IterBinding="DepartmentsVO1Iterator" id="DepartmentsVO1">
+      <nodeDefinition DefName="model.DepartmentsVO" Name="DepartmentsVO10">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

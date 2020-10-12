@@ -35,6 +35,28 @@
         <to-activity-id>Departments</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>Employees</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>returnEmp</from-outcome>
+        <to-activity-id>Welcome</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>backToDept</from-outcome>
+        <to-activity-id>Departments</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>Departments</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>returnDept</from-outcome>
+        <to-activity-id>Welcome</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>backToEmp</from-outcome>
+        <to-activity-id>Employees</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

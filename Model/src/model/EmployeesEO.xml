@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="EMPLOYEES"
   AliasName="EmployeesEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EmployeesEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="EmployeeId"
     IsNotNull="true"
@@ -157,6 +162,13 @@
     AssociationOtherEnd="model.DeptMgrFkAssoc.EmployeesEO1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="JobEO"
+    Association="model.EmpJobFkAssoc"
+    AssociationEnd="model.EmpJobFkAssoc.JobEO"
+    AssociationOtherEnd="model.EmpJobFkAssoc.EmployeesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="EmpEmailNn">
     <DesignTime>

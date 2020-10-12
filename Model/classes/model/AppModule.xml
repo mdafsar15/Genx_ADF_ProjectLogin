@@ -22,6 +22,9 @@
   <ViewUsage
     Name="DepartmentsVO2"
     ViewObjectName="model.DepartmentsVO"/>
+  <ViewUsage
+    Name="JobVO1"
+    ViewObjectName="model.JobVO"/>
   <ViewLinkUsage
     Name="EmpManagerFkLink1"
     ViewLinkObjectName="model.EmpManagerFkLink"

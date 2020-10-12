@@ -13,6 +13,71 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="EmployeesVO1"
+    ViewObjectName="model.EmployeesVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartmentsVO1"
+    ViewObjectName="model.DepartmentsVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="JobVO1"
+    ViewObjectName="model.JobVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentsVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobId"
+    ListVOName="JobVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeesEO"
     Entity="model.EmployeesEO"/>
@@ -63,7 +128,15 @@
     PrecisionRule="true"
     EntityAttrName="JobId"
     EntityUsage="EmployeesEO"
-    AliasName="JOB_ID"/>
+    AliasName="JOB_ID"
+    LOVName="LOV_JobId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Salary"
     PrecisionRule="true"
@@ -81,13 +154,29 @@
     PrecisionRule="true"
     EntityAttrName="ManagerId"
     EntityUsage="EmployeesEO"
-    AliasName="MANAGER_ID"/>
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="EmployeesEO"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="EmployeesVO"
     ViewLink="model.EmpManagerFkLink"
