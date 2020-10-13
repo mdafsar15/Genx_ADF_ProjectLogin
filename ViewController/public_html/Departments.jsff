@@ -3,31 +3,32 @@
           xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
   <af:panelStretchLayout id="psl1" endWidth="781px">
     <f:facet name="start"/>
-    <f:facet name="end">
+    <f:facet name="end"/>
+    <f:facet name="top">
       <af:toolbar id="t2">
-        <af:button text="Add New" id="b1">
+        <af:button text="Add New" id="b1" inlineStyle="font-size:large;">
           <af:showPopupBehavior popupId="padddept"/>
         </af:button>
-        <af:button text="Edit" id="b2">
+        <af:button text="Edit" id="b2" inlineStyle="font-size:large;">
           <af:showPopupBehavior popupId="peditdept"/>
         </af:button>
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save"
-                   id="b3"/>
-        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b4">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3" inlineStyle="font-size:large;"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b4"
+                   inlineStyle="font-size:large;">
           <af:resetActionListener/>
         </af:button>
-        <af:button text="Back To Welcome" id="b5" action="returnDept"/>
-        <af:button text="Back To Employee" id="b6" action="backToEmp"/>
+        <af:button text="Back To Welcome" id="b5" action="returnDept" inlineStyle="font-size:large;"/>
+        <af:button text="Back To Employee" id="b6" action="backToEmp" inlineStyle="font-size:large;"/>
       </af:toolbar>
     </f:facet>
-    <f:facet name="top"/>
     <f:facet name="bottom"/>
     <f:facet name="center">
       <af:table value="#{bindings.DepartmentsVO1.collectionModel}" var="row" rows="#{bindings.DepartmentsVO1.rangeSize}"
                 emptyText="#{bindings.DepartmentsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                 rowBandingInterval="0" selectedRowKeys="#{bindings.DepartmentsVO1.collectionModel.selectedRow}"
                 selectionListener="#{bindings.DepartmentsVO1.collectionModel.makeCurrent}" rowSelection="single"
-                fetchSize="#{bindings.DepartmentsVO1.rangeSize}" id="t1">
+                fetchSize="#{bindings.DepartmentsVO1.rangeSize}" id="t1"
+                inlineStyle="column-width:auto; font-size:large;">
         <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentId.name}" sortable="true"
                    headerText="#{bindings.DepartmentsVO1.hints.DepartmentId.label}" id="c1">
           <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentId.tooltip}"

@@ -1,26 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelStretchLayout id="psl1" endWidth="222px">
+  <af:panelStretchLayout id="psl1" endWidth="355px">
     <f:facet name="start"/>
     <f:facet name="end"/>
     <f:facet name="top">
-      <af:toolbar id="t1">
-        <af:button text="Add New" id="b1">
+      <af:toolbar id="t3">
+        <af:button text="Add New" id="b1" inlineStyle="font-size:large;">
           <af:showPopupBehavior popupId="paddEmp"/>
         </af:button>
-        <af:button text="Edit" id="b2">
+        <af:button text="Edit" id="b2" inlineStyle="font-size:large;">
           <af:showPopupBehavior popupId="peditEmp"/>
         </af:button>
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save"
-                   id="b3"/>
-        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                   immediate="true" id="b4">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3" inlineStyle="font-size:large;"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b4"
+                   inlineStyle="font-size:large;">
           <af:resetActionListener/>
         </af:button>
-        <af:button text="Back To Welcome" id="b5" action="returnEmp"/>
-        <af:button text="Back To Department" id="b6" action="backToDept"/>
-        <input type="search" name="Search" formaction="${bindings.variables.findMode}"/>
+        <af:button text="Back To Department" id="b6" action="backToDept" inlineStyle="font-size:large;"/>
+        <af:button text="Back To Welcome" id="b5" action="returnEmp" inlineStyle="font-size:large;"/>
       </af:toolbar>
     </f:facet>
     <f:facet name="bottom"/>

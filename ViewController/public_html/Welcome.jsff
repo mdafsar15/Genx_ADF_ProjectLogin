@@ -13,8 +13,11 @@
       <af:toolbar id="t1">
         <af:outputText value="#{'Welcome&#160;'}#{securityContext.userName}#{',&#160;'}" id="ot1"
                        inlineStyle="font-size:large;"/>
-        <af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
-                 inlineStyle="font-size:x-large;"/>
+        <!--<af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
+                 inlineStyle="font-size:x-large;"/>-->
+                 <af:goLink text="LogOut"
+                destination="adfAuthentication?logout=true&amp;end_url=/faces/Login.html"
+                inlineStyle="color:Red; font-size:x-large; font-weight:bold;"/>
       </af:toolbar>
     </f:facet>
     <f:facet name="bottom">

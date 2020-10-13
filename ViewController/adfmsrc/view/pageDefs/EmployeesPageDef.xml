@@ -3,7 +3,6 @@
                 Package="view.pageDefs">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
     <iterator Binds="EmployeesVO1" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesVO1Iterator"/>
   </executables>
   <bindings>
