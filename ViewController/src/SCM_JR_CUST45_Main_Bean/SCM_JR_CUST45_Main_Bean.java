@@ -248,7 +248,7 @@ public class SCM_JR_CUST45_Main_Bean {
 
     public void btnEditActionListener(ActionEvent actionEvent) {
         btnEnableDisable();
-        checkValueInHederTable("Mdm0101EoView1Iterator", masonryLayoutBinding);
+        checkValueInHederTable("EmployeesVO1Iterator", masonryLayoutBinding);
         CommonHelper.refreshLayout(masonryLayoutBinding);
         CommonHelper.refreshLayout(toolbarBinding);
     }

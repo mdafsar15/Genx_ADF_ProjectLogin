@@ -183,12 +183,13 @@
           <af:button text="Create " id="b1" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}">
             <af:showPopupBehavior popupId="paddEmp"/>
           </af:button>
-          <af:button text="Edit Data" id="b2" inlineStyle="font-size:large;" icon="#{resource['images:btnEdit.png']}"
-                     actionListener="#{SCM_JR_CUST45_Main_Bean.btnEditActionListener}"/>
+          <af:button text="Edit Data" id="b2" inlineStyle="font-size:large;"
+                     disabledIcon="#{resource['images:btnEditG.png']}" icon="#{resource['images:btnEdit.png']}"/>
           <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
-                     id="b3" inlineStyle="font-size:large;" icon="#{resource['images:btnSave.png']}"/>
+                     id="b3" inlineStyle="font-size:large;" icon="#{resource['images:btnSave.png']}"
+                     disabledIcon="#{resource['images:btnSaveG.png']}"/>
           <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                     disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4" inlineStyle="font-size:large;"
+                     disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4" inlineStyle="font-size:large;" disabledIcon="#{resource['images:btnCanG.png']}"
                      icon="#{resource['images:btnCan.png']}">
             <af:resetActionListener/>
           </af:button>
@@ -278,8 +279,9 @@
             <af:toolbar id="t2">
               <af:button id="b7" icon="#{resource['images:btneditgrey.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
-                         actionListener="#{SCM_JR_CUST45_Main_Bean.VariantEditActionListener}"
-                         disabled="#{SCM_JR_CUST45_Main_Bean.btnTabEditDis}"/>
+                         hoverIcon="#{resource['images:btneditblue16.png']}">
+                <af:showPopupBehavior popupId=":::peditEmp"/>
+              </af:button>
             </af:toolbar>
           </af:column>
         </af:table>
