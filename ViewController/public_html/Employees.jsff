@@ -1,99 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelStretchLayout id="psl1" endWidth="355px">
-    <f:facet name="start"/>
-    <f:facet name="end"/>
-    <f:facet name="top">
-      <af:toolbar id="t3">
-        <af:button text="Add New" id="b1" inlineStyle="font-size:large;">
-          <af:showPopupBehavior popupId="paddEmp"/>
-        </af:button>
-        <af:button text="Edit" id="b2" inlineStyle="font-size:large;">
-          <af:showPopupBehavior popupId="peditEmp"/>
-        </af:button>
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
-                   id="b3" inlineStyle="font-size:large;"/>
-        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4" inlineStyle="font-size:large;">
-          <af:resetActionListener/>
-        </af:button>
-        <af:button text="Back To Department" id="b6" action="backToDept" inlineStyle="font-size:large;"/>
-        <af:button text="Back To Welcome" id="b5" action="returnEmp" inlineStyle="font-size:large;"/>
-      </af:toolbar>
-    </f:facet>
-    <f:facet name="bottom"/>
-    <f:facet name="center">
-      <af:table value="#{bindings.EmployeesVO1.collectionModel}" var="row" rows="#{bindings.EmployeesVO1.rangeSize}"
-                emptyText="#{bindings.EmployeesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                rowBandingInterval="0" selectedRowKeys="#{bindings.EmployeesVO1.collectionModel.selectedRow}"
-                selectionListener="#{bindings.EmployeesVO1.collectionModel.makeCurrent}" rowSelection="single"
-                fetchSize="#{bindings.EmployeesVO1.rangeSize}" id="t2">
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.EmployeeId.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.EmployeeId.label}" id="c1">
-          <af:outputText value="#{row.EmployeeId}" shortDesc="#{bindings.EmployeesVO1.hints.EmployeeId.tooltip}"
-                         id="ot1">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.EmployeeId.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.FirstName.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.FirstName.label}" id="c2">
-          <af:outputText value="#{row.FirstName}" shortDesc="#{bindings.EmployeesVO1.hints.FirstName.tooltip}"
-                         id="ot2"/>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.LastName.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.LastName.label}" id="c3">
-          <af:outputText value="#{row.LastName}" shortDesc="#{bindings.EmployeesVO1.hints.LastName.tooltip}" id="ot3"/>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.Email.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.Email.label}" id="c4">
-          <af:outputText value="#{row.Email}" shortDesc="#{bindings.EmployeesVO1.hints.Email.tooltip}" id="ot4"/>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.PhoneNumber.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.PhoneNumber.label}" id="c5">
-          <af:outputText value="#{row.PhoneNumber}" shortDesc="#{bindings.EmployeesVO1.hints.PhoneNumber.tooltip}"
-                         id="ot5"/>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.HireDate.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.HireDate.label}" id="c6">
-          <af:outputText value="#{row.HireDate}" shortDesc="#{bindings.EmployeesVO1.hints.HireDate.tooltip}" id="ot6">
-            <af:convertDateTime pattern="#{bindings.EmployeesVO1.hints.HireDate.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.JobId.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.JobId.label}" id="c7">
-          <af:outputText value="#{row.JobId}" shortDesc="#{bindings.EmployeesVO1.hints.JobId.tooltip}" id="ot7"/>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.Salary.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.Salary.label}" id="c8">
-          <af:outputText value="#{row.Salary}" shortDesc="#{bindings.EmployeesVO1.hints.Salary.tooltip}" id="ot8">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.Salary.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.CommissionPct.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.CommissionPct.label}" id="c9">
-          <af:outputText value="#{row.CommissionPct}" shortDesc="#{bindings.EmployeesVO1.hints.CommissionPct.tooltip}"
-                         id="ot9">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.CommissionPct.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.ManagerId.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.ManagerId.label}" id="c10">
-          <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.EmployeesVO1.hints.ManagerId.tooltip}"
-                         id="ot10">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.ManagerId.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.EmployeesVO1.hints.DepartmentId.name}" sortable="true"
-                   headerText="#{bindings.EmployeesVO1.hints.DepartmentId.label}" id="c11">
-          <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.EmployeesVO1.hints.DepartmentId.tooltip}"
-                         id="ot11">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.DepartmentId.format}"/>
-          </af:outputText>
-        </af:column>
-      </af:table>
-    </f:facet>
-  </af:panelStretchLayout>
   <af:popup childCreation="deferred" autoCancel="disabled" id="psuccessEmp">
     <af:outputText value="Data Inserted Successfully !!!" id="ot12" inlineStyle="font-size:x-large;"/>
   </af:popup>
@@ -266,4 +173,117 @@
       </af:panelFormLayout>
     </af:dialog>
   </af:popup>
+  <af:panelGridLayout id="pgl1">
+    <af:gridRow marginTop="5px" height="auto" id="gr1">
+      <af:gridCell marginStart="5px" width="50%" id="gc1"/>
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+        <af:toolbar id="t3">
+          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                                                                                                                                                                                                                                                                                                                                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+          <af:button text="Create " id="b1" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}">
+            <af:showPopupBehavior popupId="paddEmp"/>
+          </af:button>
+          <af:button text="Edit Data" id="b2" inlineStyle="font-size:large;" icon="#{resource['images:btnEdit.png']}"
+                     actionListener="#{SCM_JR_CUST45_Main_Bean.btnEditActionListener}"/>
+          <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+                     id="b3" inlineStyle="font-size:large;" icon="#{resource['images:btnSave.png']}"/>
+          <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                     disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4" inlineStyle="font-size:large;"
+                     icon="#{resource['images:btnCan.png']}">
+            <af:resetActionListener/>
+          </af:button>
+          <af:button text="Department" id="b6" action="backToDept" inlineStyle="font-size:large;"
+                     icon="#{resource['images:btnExit.png']}"/>
+          <af:button text="Home" id="b5" action="returnEmp" inlineStyle="font-size:large;"
+                     icon="#{resource['images:home16.png']}"/>
+        </af:toolbar>
+      </af:gridCell>
+    </af:gridRow>
+  </af:panelGridLayout>
+  <af:masonryLayout id="ml1">
+    <af:panelGroupLayout id="pgl2">
+      <af:panelCollection id="pc1" featuresOff="statusBar" styleClass="AFStretchWidth">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.EmployeesVO1.collectionModel}" var="row" rows="#{bindings.EmployeesVO1.rangeSize}"
+                  emptyText="#{bindings.EmployeesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.EmployeesVO1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.EmployeesVO1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.EmployeesVO1.rangeSize}" id="t1">
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.EmployeeId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.EmployeeId.label}" id="c1">
+            <af:outputText value="#{row.EmployeeId}" shortDesc="#{bindings.EmployeesVO1.hints.EmployeeId.tooltip}"
+                           id="ot1">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.EmployeeId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.FirstName.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.FirstName.label}" id="c2">
+            <af:outputText value="#{row.FirstName}" shortDesc="#{bindings.EmployeesVO1.hints.FirstName.tooltip}"
+                           id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.LastName.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.LastName.label}" id="c3">
+            <af:outputText value="#{row.LastName}" shortDesc="#{bindings.EmployeesVO1.hints.LastName.tooltip}"
+                           id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.Email.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.Email.label}" id="c4">
+            <af:outputText value="#{row.Email}" shortDesc="#{bindings.EmployeesVO1.hints.Email.tooltip}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.PhoneNumber.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.PhoneNumber.label}" id="c5">
+            <af:outputText value="#{row.PhoneNumber}" shortDesc="#{bindings.EmployeesVO1.hints.PhoneNumber.tooltip}"
+                           id="ot5"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.HireDate.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.HireDate.label}" id="c6">
+            <af:outputText value="#{row.HireDate}" shortDesc="#{bindings.EmployeesVO1.hints.HireDate.tooltip}" id="ot6">
+              <af:convertDateTime pattern="#{bindings.EmployeesVO1.hints.HireDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.JobId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.JobId.label}" id="c7">
+            <af:outputText value="#{row.JobId}" shortDesc="#{bindings.EmployeesVO1.hints.JobId.tooltip}" id="ot7"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.Salary.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.Salary.label}" id="c8">
+            <af:outputText value="#{row.Salary}" shortDesc="#{bindings.EmployeesVO1.hints.Salary.tooltip}" id="ot8">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.Salary.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.CommissionPct.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.CommissionPct.label}" id="c9">
+            <af:outputText value="#{row.CommissionPct}" shortDesc="#{bindings.EmployeesVO1.hints.CommissionPct.tooltip}"
+                           id="ot9">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.CommissionPct.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.ManagerId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.ManagerId.label}" id="c10">
+            <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.EmployeesVO1.hints.ManagerId.tooltip}"
+                           id="ot10">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.ManagerId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesVO1.hints.DepartmentId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesVO1.hints.DepartmentId.label}" id="c11">
+            <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.EmployeesVO1.hints.DepartmentId.tooltip}"
+                           id="ot11">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesVO1.hints.DepartmentId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column id="c12">
+            <af:toolbar id="t2">
+              <af:button id="b7" icon="#{resource['images:btneditgrey.png']}"
+                         disabledIcon="#{resource['images:btneditgrey.png']}"
+                         actionListener="#{SCM_JR_CUST45_Main_Bean.VariantEditActionListener}"
+                         disabled="#{SCM_JR_CUST45_Main_Bean.btnTabEditDis}"/>
+            </af:toolbar>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </af:panelGroupLayout>
+  </af:masonryLayout>
 </jsp:root>

@@ -1,5 +1,7 @@
 package view;
 
+import javax.faces.event.ActionEvent;
+
 import oracle.adf.model.BindingContext;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.context.AdfFacesContext;
@@ -59,5 +61,9 @@ public class Employee {
                     OperationBinding ob = bc.getOperationBinding("Rollback");
                     ob.execute();
                 }
+    }
+
+    public void sds(ActionEvent actionEvent) {
+        // Add event code here...
     }
 }

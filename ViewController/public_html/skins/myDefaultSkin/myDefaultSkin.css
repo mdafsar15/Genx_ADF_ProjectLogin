@@ -2,16 +2,253 @@
 /**ADFFaces_Skin_File / DO NOT REMOVE**/
 @namespace af "http://xmlns.oracle.com/adf/faces/rich";
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
-
-af|button {
-    background-image: linear-gradient(to top, #0000A0 0%, #0000A0 50%, #f1f3f4 96.36%, #FFFFFF 100%); 
-    border: 1px solid #0000A0; 
-    color: #FFFFFF; 
+.AFDefaultFont:alias,
+body
+{
+src:url('../Font/Calibri.ttf')format(true);
+/*-tr-inhibit:font-family;*/
+font-family:Calibri !important;
+font-size: 14px;
+}
+AF|outputText{
+font-family:Calibri;
+}
+af|dialog.gofdialog af|button {
+    background-color: #4285f4;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-weight: normal;
+    background-image: none;
+    border: White 0px none;
+    width: 120px;
+    font-size: 18px;
+    
 }
 
-af|outputText {
+af|dialog.gofdialog af|button::link {
+    background-color: #4285f4;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-weight: normal;
+    background-image: none;
+    border: White 0px none;
+    font-size: 18px;
 }
 
-af|panelStretchLayout {
-    width: 500px; 
+af|button.gofBtn, af|button.gofBtn::link, af|button.gofBtn:hover::link {
+    background-color: #4285f4;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-size: 20px;
+    font-weight: normal;
+    background-image: none;
+    border: White 0px none;
 }
+af|inputListOfValues, af|inputComboboxListOfValues {
+    -tr-stretch-search-dialog: true;
+}
+
+af|inputListOfValues::dialog af|dialog::content-center, af|inputComboboxListOfValues::dialog af|dialog::content-center {
+    min-width: 400px;
+    min-height: 460px;
+}
+
+af|inputListOfValues::dialog af|dialog::content-center af|query::title0, 
+af|inputListOfValues::dialog af|dialog::content-center af|query::title1, 
+af|inputListOfValues::dialog af|dialog::content-center af|query::title2, 
+af|inputListOfValues::dialog af|dialog::content-center af|query::title3, 
+af|inputListOfValues::dialog af|dialog::content-center af|query::title4, 
+af|inputListOfValues::dialog af|dialog::content-center af|query::title5, 
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title0,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title1,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title2,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title3,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title4,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title5 {
+    visibility: hidden;
+    display: none;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+af|inputListOfValues::dialog af|dialog::content-center af|query::info,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::info {
+    display: none;
+    visibility: hidden;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+af|inputListOfValues::dialog af|dialog::content-center af|query::criteria af|selectOneRadio,
+af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::criteria af|selectOneRadio
+ {
+    display: none;
+    visibility: hidden;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+ af|query{
+    margin-top: 0px;
+    padding-top: 0px;
+    -tr-header-height: 0px;
+}
+af|button.gofBtn:disabled::link{
+    background-color: #8998a3;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-size: 20px;
+    font-weight: normal;
+    background-image: none;
+    border: White 0px none;
+}
+.gofpgl30
+{
+height:340px;
+min-width:400px;
+width:32%;
+background-color: White;
+}
+.gofpgl70
+{
+height:340px;
+width:65%;
+min-width:820px;
+background-color: White;
+}
+.gofpgl50
+{
+height:340px;
+width:48%;
+min-width:625px;
+background-color: White;
+}
+
+.gofpglVertical30
+{
+height:700px;
+width:32%;
+min-width:400px;
+background-color: White;
+}
+af|panelFormLayout::label-stacked-cell{
+font-family:Calibri;
+}
+af|dialog.gofdialog{
+background-color: White;
+border-color:#4285f4  ;
+}
+af|dialog.gofdialog::header,af|dialog.gofdialog::header-end,af|dialog.gofdialog::header-start,
+af|dialog.gofdialog::title
+{
+color:#FFFFFF;
+text-align: center;
+background-color: #4285f4;
+background-image: none;
+}
+
+
+af|inputText::content {
+   background-color: #FFFFFF;
+   border-radius: 5px;
+   font-size:14px;
+}
+af|selectOneChoice::content{
+background-color: #FFFFFF;
+   border-radius: 5px;
+   font-size:14px;
+}
+af|inputDate::content{
+background-color: #FFFFFF;
+   border-radius: 5px;
+   font-size:14px;
+}
+.gofpglVertical70{
+ height: 700px;
+    width: 65%;
+    min-width: 820px;
+background-color: White;
+    
+}
+.gofpglVerticalFull30{
+   height: 1050px;
+   width: 32%;
+   min-width: 400px;
+   background-color: White;
+}
+
+
+
+.gofpglSalaryProcessFullVertical30{
+    height: 700px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+}
+
+.gofpgsalaryProcessl70{
+    height: 340px;
+    width: 65%;
+    min-width: 820px;
+    background-color: White;
+}
+.gofpgl30Manpower{
+   height: 340px;
+   width: 32%;
+   min-width: 400px;
+   background-color: White;
+}
+
+.gofpgl70EmpMaterDataBrowser{
+ height: 700px;
+    width: 65%;
+   min-width: 820px;
+   background-color: White;
+}
+
+.gofpglVertical30EmpMstrDataBrowser{
+ height: 700px;
+    width: 25%;
+   min-width: 340px;
+   background-color: White;
+}
+
+.gofpgl25EmpMstrDatBrowser{
+ height: 340px;
+    width: 24%;
+    min-width: 100px;
+    max-width: 150px;
+background-color: White;    
+}
+
+.gofpglVerticalFullEligbiltyCr30{
+    height: 700px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+}
+.gofpgl100{
+ height: 700px;
+    width: 97%;
+   min-width: 1200px;
+   background-color: White;
+}
+

@@ -64,6 +64,7 @@
         <Item Value="DepartmentId"/>
       </AttrNames>
     </attributeValues>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <tree IterBinding="EmployeesVO1Iterator" id="EmployeesVO1">
       <nodeDefinition DefName="model.EmployeesVO" Name="EmployeesVO10">
         <AttrNames>
@@ -81,6 +82,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>
