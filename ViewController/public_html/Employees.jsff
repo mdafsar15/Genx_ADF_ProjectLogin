@@ -12,9 +12,10 @@
         <af:button text="Edit" id="b2" inlineStyle="font-size:large;">
           <af:showPopupBehavior popupId="peditEmp"/>
         </af:button>
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3" inlineStyle="font-size:large;"/>
-        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b4"
-                   inlineStyle="font-size:large;">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+                   id="b3" inlineStyle="font-size:large;"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4" inlineStyle="font-size:large;">
           <af:resetActionListener/>
         </af:button>
         <af:button text="Back To Department" id="b6" action="backToDept" inlineStyle="font-size:large;"/>
