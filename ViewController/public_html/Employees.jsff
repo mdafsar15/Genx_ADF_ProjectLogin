@@ -5,7 +5,7 @@
     <af:outputText value="Data Inserted Successfully !!!" id="ot12" inlineStyle="font-size:x-large;"/>
   </af:popup>
   <af:popup childCreation="deferred" autoCancel="disabled" id="peditEmp" contentDelivery="lazyUncached">
-    <af:dialog id="d2" title="Edit Employee">
+    <af:dialog id="d2" title="Edit Employee" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
       <af:panelFormLayout id="pfl3">
         <af:inputText value="#{bindings.EmployeeId.inputValue}" label="#{bindings.EmployeeId.hints.label}"
@@ -90,7 +90,7 @@
   </af:popup>
   <af:popup childCreation="deferred" autoCancel="disabled" id="paddEmp"
             popupFetchListener="#{viewScope.empBean.onCreateNewEmp}">
-    <af:dialog id="d1" title="New Employee">
+    <af:dialog id="d1" title="New Employee" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
       <af:panelFormLayout id="pfl2">
         <af:inputText value="#{bindings.EmployeeId.inputValue}" label="#{bindings.EmployeeId.hints.label}"
@@ -296,8 +296,7 @@
               <af:button id="b7" icon="#{resource['images:btneditgrey.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
                          hoverIcon="#{resource['images:btneditblue16.png']}"
-                         actionListener="#{SCM_JR_CUST45_Main_Bean.Mdm0110EditActionListener}"
-                         disabled="#{SCM_JR_CUST45_Main_Bean.btnTabEditDis}">
+                         actionListener="#{SCM_JR_CUST45_Main_Bean.Mdm0110EditActionListener}">
                 <af:showPopupBehavior popupId=":::peditEmp"/>
                 <af:setActionListener from="E" to="#{SCM_JR_CUST45_Main_Bean.currentdetBtnValue}"/>
               </af:button>

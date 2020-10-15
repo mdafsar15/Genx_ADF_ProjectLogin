@@ -136,26 +136,26 @@
                   selectionListener="#{bindings.DepartmentsVO1.collectionModel.makeCurrent}" rowSelection="single"
                   fetchSize="#{bindings.DepartmentsVO1.rangeSize}" id="t1" columnStretching="column:c2">
           <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentId.name}" sortable="true"
-                     headerText="#{bindings.DepartmentsVO1.hints.DepartmentId.label}" id="c1">
+                     headerText="Department Id" id="c1">
             <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentId.tooltip}"
                            id="ot1">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.DepartmentId.format}"/>
             </af:outputText>
           </af:column>
           <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentName.name}" sortable="true"
-                     headerText="#{bindings.DepartmentsVO1.hints.DepartmentName.label}" id="c2">
+                     headerText="Department Name" id="c2">
             <af:outputText value="#{row.DepartmentName}"
                            shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentName.tooltip}" id="ot2"/>
           </af:column>
           <af:column sortProperty="#{bindings.DepartmentsVO1.hints.ManagerId.name}" sortable="true"
-                     headerText="#{bindings.DepartmentsVO1.hints.ManagerId.label}" id="c3">
+                     headerText="Manager Id" id="c3">
             <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsVO1.hints.ManagerId.tooltip}"
                            id="ot3">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.ManagerId.format}"/>
             </af:outputText>
           </af:column>
           <af:column sortProperty="#{bindings.DepartmentsVO1.hints.LocationId.name}" sortable="true"
-                     headerText="#{bindings.DepartmentsVO1.hints.LocationId.label}" id="c4">
+                     headerText="Location Id" id="c4">
             <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsVO1.hints.LocationId.tooltip}"
                            id="ot4">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.LocationId.format}"/>
