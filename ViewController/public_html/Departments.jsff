@@ -1,64 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-  <af:panelStretchLayout id="psl1" endWidth="781px">
-    <f:facet name="start"/>
-    <f:facet name="end"/>
-    <f:facet name="top">
-      <af:toolbar id="t2">
-        <af:button text="Add New" id="b1" inlineStyle="font-size:large;">
-          <af:showPopupBehavior popupId="padddept"/>
-        </af:button>
-        <af:button text="Edit" id="b2" inlineStyle="font-size:large;">
-          <af:showPopupBehavior popupId="peditdept"/>
-        </af:button>
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3" inlineStyle="font-size:large;"/>
-        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b4"
-                   inlineStyle="font-size:large;">
-          <af:resetActionListener/>
-        </af:button>
-        <af:button text="Back To Welcome" id="b5" action="returnDept" inlineStyle="font-size:large;"/>
-        <af:button text="Back To Employee" id="b6" action="backToEmp" inlineStyle="font-size:large;"/>
-      </af:toolbar>
-    </f:facet>
-    <f:facet name="bottom"/>
-    <f:facet name="center">
-      <af:table value="#{bindings.DepartmentsVO1.collectionModel}" var="row" rows="#{bindings.DepartmentsVO1.rangeSize}"
-                emptyText="#{bindings.DepartmentsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                rowBandingInterval="0" selectedRowKeys="#{bindings.DepartmentsVO1.collectionModel.selectedRow}"
-                selectionListener="#{bindings.DepartmentsVO1.collectionModel.makeCurrent}" rowSelection="single"
-                fetchSize="#{bindings.DepartmentsVO1.rangeSize}" id="t1"
-                inlineStyle="column-width:auto; font-size:large;">
-        <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentId.name}" sortable="true"
-                   headerText="#{bindings.DepartmentsVO1.hints.DepartmentId.label}" id="c1">
-          <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentId.tooltip}"
-                         id="ot1">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.DepartmentId.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentName.name}" sortable="true"
-                   headerText="#{bindings.DepartmentsVO1.hints.DepartmentName.label}" id="c2">
-          <af:outputText value="#{row.DepartmentName}"
-                         shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentName.tooltip}" id="ot2"/>
-        </af:column>
-        <af:column sortProperty="#{bindings.DepartmentsVO1.hints.ManagerId.name}" sortable="true"
-                   headerText="#{bindings.DepartmentsVO1.hints.ManagerId.label}" id="c3">
-          <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsVO1.hints.ManagerId.tooltip}"
-                         id="ot3">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.ManagerId.format}"/>
-          </af:outputText>
-        </af:column>
-        <af:column sortProperty="#{bindings.DepartmentsVO1.hints.LocationId.name}" sortable="true"
-                   headerText="#{bindings.DepartmentsVO1.hints.LocationId.label}" id="c4">
-          <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsVO1.hints.LocationId.tooltip}"
-                         id="ot4">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.LocationId.format}"/>
-          </af:outputText>
-        </af:column>
-      </af:table>
-    </f:facet>
-  </af:panelStretchLayout>
-  <af:popup childCreation="deferred" autoCancel="disabled" id="peditdept">
+  <af:popup childCreation="deferred" autoCancel="disabled" id="peditdept" contentDelivery="lazyUncached">
     <af:dialog id="d2" title="Edit Department">
       <f:facet name="buttonBar"/>
       <af:panelFormLayout id="pfl2">
@@ -138,4 +81,97 @@
   <af:popup childCreation="deferred" autoCancel="disabled" id="psuccess">
     <h:outputText value="Data Inserted Successfully" id="ot5" style="font-size:x-large;"/>
   </af:popup>
+  <af:panelGridLayout id="pgl1">
+    <af:gridRow marginTop="5px" height="auto" id="gr1">
+      <af:gridCell marginStart="5px" width="50%" id="gc1">
+        <af:quickQuery label="Search" id="qq1">
+          <f:facet name="end">
+            <af:link text="Advanced" visible="false" id="l1"/>
+          </f:facet>
+        </af:quickQuery>
+      </af:gridCell>
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+        <af:toolbar id="t2">
+          <af:button text="Add New" id="b1" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}">
+            <af:showPopupBehavior popupId="padddept"/>
+          </af:button>
+          <af:button text="Edit" id="b2" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}">
+            <af:showPopupBehavior popupId="peditdept"/>
+          </af:button>
+          <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3" inlineStyle="font-size:large;"
+                     icon="#{resource['images:btnSave.png']}" disabledIcon="#{resource['images:btnSaveG.png']}"/>
+          <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b4"
+                     inlineStyle="font-size:large;" icon="#{resource['images:btnCan.png']}"
+                     disabledIcon="#{resource['images:btnCanG.png']}">
+            <af:resetActionListener/>
+          </af:button>
+          <af:button text="Employees" id="b6" action="backToEmp" inlineStyle="font-size:large;"
+                     icon="#{resource['images:btnExit.png']}"/>
+          <af:button text="Home" id="b5" action="returnDept" inlineStyle="font-size:large;"
+                     icon="#{resource['images:home16.png']}"/>
+        </af:toolbar>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+      <af:gridCell marginStart="5px" width="50%" id="gc3"/>
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4"/>
+    </af:gridRow>
+  </af:panelGridLayout>
+  <af:masonryLayout id="ml1">
+    <af:panelGroupLayout id="pgl2">
+      <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar">
+          <af:toolbar id="t4">
+            <af:button text="Export" id="b8" icon="#{resource['images:excel.png']}">
+              <af:exportCollectionActionListener type="excelHTML" exportedId="t1" filename="all_xls.xls"/>
+            </af:button>
+          </af:toolbar>
+        </f:facet>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.DepartmentsVO1.collectionModel}" var="row"
+                  rows="#{bindings.DepartmentsVO1.rangeSize}"
+                  emptyText="#{bindings.DepartmentsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.DepartmentsVO1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.DepartmentsVO1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.DepartmentsVO1.rangeSize}" id="t1" columnStretching="column:c2">
+          <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentId.name}" sortable="true"
+                     headerText="#{bindings.DepartmentsVO1.hints.DepartmentId.label}" id="c1">
+            <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentId.tooltip}"
+                           id="ot1">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.DepartmentId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsVO1.hints.DepartmentName.name}" sortable="true"
+                     headerText="#{bindings.DepartmentsVO1.hints.DepartmentName.label}" id="c2">
+            <af:outputText value="#{row.DepartmentName}"
+                           shortDesc="#{bindings.DepartmentsVO1.hints.DepartmentName.tooltip}" id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsVO1.hints.ManagerId.name}" sortable="true"
+                     headerText="#{bindings.DepartmentsVO1.hints.ManagerId.label}" id="c3">
+            <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsVO1.hints.ManagerId.tooltip}"
+                           id="ot3">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.ManagerId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsVO1.hints.LocationId.name}" sortable="true"
+                     headerText="#{bindings.DepartmentsVO1.hints.LocationId.label}" id="c4">
+            <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsVO1.hints.LocationId.tooltip}"
+                           id="ot4">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO1.hints.LocationId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column id="c5">
+            <af:toolbar id="t3">
+              <af:button id="b7" icon="#{resource['images:btneditgrey.png']}"
+                         hoverIcon="#{resource['images:btneditblue16.png']}"
+                         disabledIcon="#{resource['images:btneditgrey.png']}">
+                <af:showPopupBehavior popupId=":::peditdept"/>
+              </af:button>
+            </af:toolbar>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </af:panelGroupLayout>
+  </af:masonryLayout>
 </jsp:root>

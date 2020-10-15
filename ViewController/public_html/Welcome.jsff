@@ -1,33 +1,45 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelStretchLayout id="psl1" endWidth="591px" bottomHeight="587px">
-    <f:facet name="start"/>
-    <f:facet name="end">
-      <af:panelGroupLayout id="pgl1">
-        <af:button text="Employee" id="b1" action="emp" inlineStyle="font-size:xx-large;"/>
-        <af:button text="Department" id="b2" action="dept" inlineStyle="font-size:xx-large;"/>
-      </af:panelGroupLayout>
-    </f:facet>
-    <f:facet name="top">
-      <af:toolbar id="t1">
-        <af:outputText value="#{'Welcome&#160;'}#{securityContext.userName}#{',&#160;'}" id="ot1"
-                       inlineStyle="font-size:large;"/>
-        <!--<af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
+  <af:panelGridLayout id="pgl3">
+    <af:gridRow marginTop="5px" height="auto" id="gr1">
+      <af:gridCell marginStart="5px" width="90%" id="gc1">
+        <af:toolbar id="t1" inlineStyle="font-size:medium;">
+          <af:outputText value="#{'Welcome,&#160;'}" id="ot1"
+                         inlineStyle="font-size:xx-large; color:#0000A0;"/>
+          <af:outputText value="#{securityContext.userName}" id="ot3" inlineStyle="font-size:x-large; color:#E41B17;"/>
+          <!--<af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
                  inlineStyle="font-size:x-large;"/>-->
-                 <af:goLink text="LogOut"
-                destination="adfAuthentication?logout=true&amp;end_url=/faces/Login.html"
-                inlineStyle="color:Red; font-size:x-large; font-weight:bold;"/>
-      </af:toolbar>
-    </f:facet>
-    <f:facet name="bottom">
-      <af:outputText value="GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms.  With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs.  Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards.  Artificial Intelligence/ Machine Learning... Blockchain..." id="ot2"
-                     styleClass="myCustomBox" inlineStyle="font-size:x-large;"/>
-    </f:facet>
+        </af:toolbar>
+      </af:gridCell>
+      <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc2">
+        <af:goLink text="LogOut" destination="adfAuthentication?logout=true&amp;end_url=/faces/Login.html"
+                   inlineStyle="color:Red; font-size:x-large; font-weight:bold;" id="gl1"/>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+      <af:gridCell marginStart="5px" width="90%" id="gc3">
+        <af:panelGroupLayout id="pgl2">
+          <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo" id="i1"/>
+        </af:panelGroupLayout>
+      </af:gridCell>
+      <af:gridCell id="gc9">
+        <af:toolbar id="t2" inlineStyle="font-size:xx-large;">
+          <af:button text="Employee" id="b1" action="emp" styleClass="gofBtn" inlineStyle="font-size:xx-large;"/>
+          <af:button text="Department" id="b2" action="dept" styleClass="gofBtn"/>
+        </af:toolbar>
+      </af:gridCell>
+      <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc4"/>
+    </af:gridRow>
+  </af:panelGridLayout>
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
     <f:facet name="center">
-      <af:panelGroupLayout id="pgl2">
-        <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo" id="i1"/>
-      </af:panelGroupLayout>
+      <af:outputText value="GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms.  With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs.  Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards.  Artificial Intelligence/ Machine Learning... Blockchain..."
+                     id="ot2" styleClass="myCustomBox" inlineStyle="font-size:x-large; color: #0000FF"/>
     </f:facet>
   </af:panelStretchLayout>
 </jsp:root>
