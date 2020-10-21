@@ -90,59 +90,63 @@
   </af:popup>
   <af:popup childCreation="deferred" autoCancel="disabled" id="paddEmp"
             popupFetchListener="#{viewScope.empBean.onCreateNewEmp}">
-    <af:dialog id="d1" title="New Employee" styleClass="gofdialog">
+    <af:dialog id="d1" title="Employee Details" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
-      <af:panelFormLayout id="pfl1">
-        <af:inputText value="#{bindings.EmployeeId.inputValue}" label="Employee Id"
+      <af:panelFormLayout id="pfl1" labelAlignment="top" inlineStyle="vertical-align:top;" rows="1"
+                          maxColumns="2">
+        <af:inputText value="#{bindings.EmployeeId.inputValue}" label="Employee Id" disabled="true"
                       required="#{bindings.EmployeeId.hints.mandatory}"
                       columns="#{bindings.EmployeeId.hints.displayWidth}"
                       maximumLength="#{bindings.EmployeeId.hints.precision}"
-                      shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1" inlineStyle="vertical-align:top;">
-          <f:validator binding="#{bindings.EmployeeId.validator}"/>
+                      shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1" inlineStyle="vertical-align:top;"
+                      contentStyle="width:200px;">
+          <f:validator binding="#{bindings.EmployeeId.validator}" />
           <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
         </af:inputText>
         <af:inputText value="#{bindings.FirstName.inputValue}" label="First Name"
                       required="#{bindings.FirstName.hints.mandatory}"
                       columns="#{bindings.FirstName.hints.displayWidth}"
                       maximumLength="#{bindings.FirstName.hints.precision}"
-                      shortDesc="#{bindings.FirstName.hints.tooltip}" id="it2" inlineStyle="vertical-align:top;">
+                      shortDesc="#{bindings.FirstName.hints.tooltip}" id="it2" contentStyle="width:200px;">
           <f:validator binding="#{bindings.FirstName.validator}"/>
         </af:inputText>
         <af:inputText value="#{bindings.LastName.inputValue}" label="Last Name"
                       required="#{bindings.LastName.hints.mandatory}" columns="#{bindings.LastName.hints.displayWidth}"
                       maximumLength="#{bindings.LastName.hints.precision}"
-                      shortDesc="#{bindings.LastName.hints.tooltip}" id="it3" inlineStyle="vertical-align:top;">
+                      shortDesc="#{bindings.LastName.hints.tooltip}" id="it3" contentStyle="width:200px;">
           <f:validator binding="#{bindings.LastName.validator}"/>
         </af:inputText>
         <af:inputText value="#{bindings.Email.inputValue}" label="Email"
                       required="#{bindings.Email.hints.mandatory}" columns="#{bindings.Email.hints.displayWidth}"
                       maximumLength="#{bindings.Email.hints.precision}" shortDesc="#{bindings.Email.hints.tooltip}"
-                      id="it4" inlineStyle="vertical-align:top;">
+                      id="it4" contentStyle="width:200px;">
           <f:validator binding="#{bindings.Email.validator}"/>
         </af:inputText>
         <af:inputText value="#{bindings.PhoneNumber.inputValue}" label="Phone Number"
                       required="#{bindings.PhoneNumber.hints.mandatory}"
                       columns="#{bindings.PhoneNumber.hints.displayWidth}"
                       maximumLength="#{bindings.PhoneNumber.hints.precision}"
-                      shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="it5" inlineStyle="vertical-align:top;">
+                      shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="it5" contentStyle="width:200px;">
           <f:validator binding="#{bindings.PhoneNumber.validator}"/>
         </af:inputText>
         <af:inputDate value="#{bindings.HireDate.inputValue}" label="Hire Date"
                       required="#{bindings.HireDate.hints.mandatory}" columns="#{bindings.HireDate.hints.displayWidth}"
-                      shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1" inlineStyle="vertical-align:top;">
+                      shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1" contentStyle="width:200px;">
           <f:validator binding="#{bindings.HireDate.validator}"/>
           <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
         </af:inputDate>
-        <af:selectOneChoice value="#{bindings.JobId1.inputValue}" label="Job Id"
-                            required="#{bindings.JobId1.hints.mandatory}" shortDesc="#{bindings.JobId1.hints.tooltip}"
-                            id="soc1" inlineStyle="vertical-align:top;">
-          <f:selectItems value="#{bindings.JobId1.items}" id="si1"/>
-          <f:validator binding="#{bindings.JobId1.validator}"/>
-        </af:selectOneChoice>
+        <af:panelLabelAndMessage label="Job Id" id="plam1" inlineStyle="width:200px;">
+          <af:selectOneChoice value="#{bindings.JobId1.inputValue}" label="Job Id"
+                              required="#{bindings.JobId1.hints.mandatory}" shortDesc="#{bindings.JobId1.hints.tooltip}"
+                              id="soc1" simple="true" contentStyle="width:200px;">
+            <f:selectItems value="#{bindings.JobId1.items}" id="si1"/>
+            <f:validator binding="#{bindings.JobId1.validator}"/>
+          </af:selectOneChoice>
+        </af:panelLabelAndMessage>
         <af:inputText value="#{bindings.Salary.inputValue}" label="Salary"
                       required="#{bindings.Salary.hints.mandatory}" columns="#{bindings.Salary.hints.displayWidth}"
                       maximumLength="#{bindings.Salary.hints.precision}" shortDesc="#{bindings.Salary.hints.tooltip}"
-                      id="it6" inlineStyle="vertical-align:top;">
+                      id="it6" contentStyle="width:200px;">
           <f:validator binding="#{bindings.Salary.validator}"/>
           <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
         </af:inputText>
@@ -150,24 +154,28 @@
                       required="#{bindings.CommissionPct.hints.mandatory}"
                       columns="#{bindings.CommissionPct.hints.displayWidth}"
                       maximumLength="#{bindings.CommissionPct.hints.precision}"
-                      shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="it7" inlineStyle="vertical-align:top;">
+                      shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="it7" contentStyle="width:200px;">
           <f:validator binding="#{bindings.CommissionPct.validator}"/>
           <af:convertNumber groupingUsed="false" pattern="#{bindings.CommissionPct.format}"/>
         </af:inputText>
-        <af:selectOneChoice value="#{bindings.ManagerId1.inputValue}" label="Manager Id"
-                            required="#{bindings.ManagerId1.hints.mandatory}"
-                            shortDesc="#{bindings.ManagerId1.hints.tooltip}" id="soc2"
-                            inlineStyle="vertical-align:top;">
-          <f:selectItems value="#{bindings.ManagerId1.items}" id="si2"/>
-          <f:validator binding="#{bindings.ManagerId1.validator}"/>
-        </af:selectOneChoice>
-        <af:selectOneChoice value="#{bindings.DepartmentId1.inputValue}" label="Department Id"
-                            required="#{bindings.DepartmentId1.hints.mandatory}"
-                            shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="soc3"
-                            inlineStyle="vertical-align:top;">
-          <f:selectItems value="#{bindings.DepartmentId1.items}" id="si3"/>
-          <f:validator binding="#{bindings.DepartmentId1.validator}"/>
-        </af:selectOneChoice>
+        <af:panelLabelAndMessage label="Manager Id" id="plam2">
+          <af:selectOneChoice value="#{bindings.ManagerId1.inputValue}" label="Manager Id"
+                              required="#{bindings.ManagerId1.hints.mandatory}"
+                              shortDesc="#{bindings.ManagerId1.hints.tooltip}" id="soc2" contentStyle="width:200px;"
+                              simple="true">
+            <f:selectItems value="#{bindings.ManagerId1.items}" id="si2"/>
+            <f:validator binding="#{bindings.ManagerId1.validator}"/>
+          </af:selectOneChoice>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="Department Id" id="plam3">
+          <af:selectOneChoice value="#{bindings.DepartmentId1.inputValue}" label="Department Id"
+                              required="#{bindings.DepartmentId1.hints.mandatory}"
+                              shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="soc3" contentStyle="width:200px;"
+                              simple="true">
+            <f:selectItems value="#{bindings.DepartmentId1.items}" id="si3"/>
+            <f:validator binding="#{bindings.DepartmentId1.validator}"/>
+          </af:selectOneChoice>
+        </af:panelLabelAndMessage>
       </af:panelFormLayout>
     </af:dialog>
   </af:popup>
@@ -188,7 +196,8 @@
             <af:showPopupBehavior popupId="paddEmp"/>
           </af:button>
           <af:button text="Edit Data" id="b2" inlineStyle="font-size:large;"
-                     disabledIcon="#{resource['images:btnEditG.png']}" icon="#{resource['images:btnEdit.png']}">
+                     disabledIcon="#{resource['images:btnEditG.png']}" icon="#{resource['images:btnEdit.png']}"
+                     actionListener="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.btnEditActionListener}">
             <af:setActionListener from="E" to="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.currentBtnValue}"/>
           </af:button>
           <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
@@ -302,9 +311,10 @@
               <af:button id="b7" icon="#{resource['images:btneditgrey.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
                          hoverIcon="#{resource['images:btneditblue16.png']}"
-                         actionListener="#{SCM_JR_CUST45_Main_Bean.Mdm0110EditActionListener}">
+                         actionListener="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.Mdm0110EditActionListener}"
+                         disabled="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.btnTabEditDis}">
                 <af:showPopupBehavior popupId=":::peditEmp"/>
-                <af:setActionListener from="E" to="#{SCM_JR_CUST45_Main_Bean.currentdetBtnValue}"/>
+                <af:setActionListener from="E" to="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.currentdetBtnValue}"/>
               </af:button>
             </af:toolbar>
           </af:column>
