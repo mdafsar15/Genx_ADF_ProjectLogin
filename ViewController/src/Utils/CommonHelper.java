@@ -1,8 +1,8 @@
-package SCM_JR_CUST45_Utils;
+package Utils;
 
-import java.util.List;
+import SCM_JR_CUST45_Utils.JSFUtils;
+
 import java.util.Locale;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import javax.el.ELContext;
@@ -14,43 +14,27 @@ import javax.faces.application.FacesMessage;
 import javax.faces.application.NavigationHandler;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
-import javax.faces.event.PhaseId;
-import javax.faces.validator.ValidatorException;
 
-import oracle.adf.controller.ControllerContext;
-import oracle.adf.controller.TaskFlowContext;
-import oracle.adf.controller.TaskFlowTrainModel;
-import oracle.adf.controller.TaskFlowTrainStopModel;
-import oracle.adf.controller.ViewPortContext;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.RichPopup;
-import oracle.adf.view.rich.component.rich.fragment.RichRegion;
 import oracle.adf.view.rich.context.AdfFacesContext;
 
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
 import oracle.jbo.ApplicationModule;
-import oracle.jbo.Row;
-import oracle.jbo.VariableValueManager;
-import oracle.jbo.ViewObject;
-import oracle.jbo.server.ViewObjectImpl;
-
 
 import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
 import org.apache.myfaces.trinidad.util.Service;
 
-
 public class CommonHelper {
-
     public CommonHelper() {
         super();
     }
-
+    
     public static String getMainBundleProperty(String key) {
         return getLocProperty("com.penfax.view.PenfaxViewControllerBundle", key);
     }
@@ -143,11 +127,11 @@ public class CommonHelper {
         FacesContext.getCurrentInstance().addMessage(compID, new FacesMessage(FacesMessage.SEVERITY_WARN, msg, msg));
     }
     /*
- * method will provide the values
- *  @param  ViewObject
- *   @param whereClause
- *    @param parameters for whereClause
- * */
+    * method will provide the values
+    *  @param  ViewObject
+    *   @param whereClause
+    *    @param parameters for whereClause
+    * */
 
 
     public static Object evaluateEL(String el) {
@@ -174,17 +158,17 @@ public class CommonHelper {
 
 
     /* 
-   * This method finds the operationBinding for method opr(String).
-   * If no operationBinding is found it adds Error OPER_BINDING_NOT_FOUND to PenfaxResult .
-   * Why Class as input param : This method return Object, returned by method Executed. In case method execution fails, reported
-   * error must provide information which class tried executing opr method.
-   * If operationBinding is present, it is executed. If there are any errors in execution,
-   *     erros are added to PenfaxResult and further processResult method is called to display error.
-   *
-   * @param opr
-   * @param className
-   * @return
-   */
+    * This method finds the operationBinding for method opr(String).
+    * If no operationBinding is found it adds Error OPER_BINDING_NOT_FOUND to PenfaxResult .
+    * Why Class as input param : This method return Object, returned by method Executed. In case method execution fails, reported
+    * error must provide information which class tried executing opr method.
+    * If operationBinding is present, it is executed. If there are any errors in execution,
+    *     erros are added to PenfaxResult and further processResult method is called to display error.
+    *
+    * @param opr
+    * @param className
+    * @return
+    */
 
 
     /* 

@@ -179,15 +179,9 @@
       </af:panelFormLayout>
     </af:dialog>
   </af:popup>
-  <af:panelGridLayout id="pgl1">
+  <af:panelGridLayout id="pgl1" inlineStyle="background-color:white;">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
-      <af:gridCell marginStart="5px" width="50%" id="gc1">
-        <af:quickQuery label="Search" id="qq1">
-          <f:facet name="end">
-            <af:link text="Advanced" visible="false" id="l1"/>
-          </f:facet>
-        </af:quickQuery>
-      </af:gridCell>
+      <af:gridCell marginStart="5px" width="50%" id="gc1"/>
       <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
         <af:toolbar id="t3">
           &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
@@ -197,8 +191,8 @@
           </af:button>
           <af:button text="Edit Data" id="b2" inlineStyle="font-size:large;"
                      disabledIcon="#{resource['images:btnEditG.png']}" icon="#{resource['images:btnEdit.png']}"
-                     actionListener="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.btnEditActionListener}">
-            <af:setActionListener from="E" to="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.currentBtnValue}"/>
+                     actionListener="#{viewScope.empBean.btnEditActionListener}">
+            <af:setActionListener from="E" to="#{viewScope.empBean.currentBtnValue}"/>
           </af:button>
           <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
                      id="b3" inlineStyle="font-size:large;" icon="#{resource['images:btnSave.png']}"
@@ -216,14 +210,14 @@
       </af:gridCell>
     </af:gridRow>
   </af:panelGridLayout>
-  <af:masonryLayout id="ml1">
+  <af:masonryLayout id="ml1" inlineStyle="background-color:white;" binding="#{viewScope.empBean.masonryLayoutRefresh}">
     <af:panelGroupLayout id="pgl2">
       <af:panelCollection id="pc1" featuresOff="statusBar" styleClass="AFStretchWidth">
         <f:facet name="menus"/>
         <f:facet name="toolbar">
           <af:toolbar id="t4">
             <af:button text="Export" id="b8" icon="#{resource['images:excel.png']}">
-              <af:exportCollectionActionListener type="excelHTML" exportedId="t1" filename="all_xls.xls"/>
+              <af:exportCollectionActionListener type="excelHTML" exportedId="t5" filename="all_xls.xls"/>
             </af:button>
             
           </af:toolbar>
@@ -311,10 +305,10 @@
               <af:button id="b7" icon="#{resource['images:btneditgrey.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
                          hoverIcon="#{resource['images:btneditblue16.png']}"
-                         actionListener="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.Mdm0110EditActionListener}"
-                         disabled="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.btnTabEditDis}">
+                         actionListener="#{viewScope.empBean.EditActionListener}"
+                         binding="#{viewScope.empBean.itemPopupBinding}" disabled="#{viewScope.empBean.btnTabEditDis}">
                 <af:showPopupBehavior popupId=":::peditEmp"/>
-                <af:setActionListener from="E" to="#{pageFlowScope.SCM_JR_CUST45_Main_Bean.currentdetBtnValue}"/>
+                <af:setActionListener from="E" to="#{viewScope.empBean.currentdetBtnValue}"/>
               </af:button>
             </af:toolbar>
           </af:column>

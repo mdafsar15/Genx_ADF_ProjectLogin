@@ -23,7 +23,7 @@
     <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
       <af:gridCell marginStart="5px" width="90%" id="gc3">
         <af:panelGroupLayout id="pgl2">
-          <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo" id="i1"/>
+          <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo"  id="i1" />
         </af:panelGroupLayout>
       </af:gridCell>
       <af:gridCell id="gc9">
