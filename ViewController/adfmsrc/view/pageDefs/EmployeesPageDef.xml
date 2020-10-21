@@ -4,6 +4,8 @@
   <parameters/>
   <executables>
     <iterator Binds="EmployeesVO1" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesVO1Iterator"/>
+    <searchRegion Binds="EmployeesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmployeesVO11Query"/>
   </executables>
   <bindings>
     <action IterBinding="EmployeesVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.EmployeesVO1"
@@ -65,8 +67,14 @@
       </AttrNames>
     </attributeValues>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="EmployeesVO1Iterator" id="EmployeesVO1">
-      <nodeDefinition DefName="model.EmployeesVO" Name="EmployeesVO10">
+    <list IterBinding="EmployeesVO1Iterator" StaticList="false" Uses="LOV_JobId" id="JobId1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesVO1Iterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesVO1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="EmployeesVO1Iterator" id="EmployeesVO11">
+      <nodeDefinition DefName="model.EmployeesVO" Name="EmployeesVO110">
         <AttrNames>
           <Item Value="EmployeeId"/>
           <Item Value="FirstName"/>

@@ -5,12 +5,12 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="DepartmentsVO1" RangeSize="25" DataControl="AppModuleDataControl" id="DepartmentsVO1Iterator"/>
+    <searchRegion Binds="DepartmentsVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DepartmentsVO11Query"/>
   </executables>
   <bindings>
     <action IterBinding="DepartmentsVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.DepartmentsVO1"
             DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
-    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
     <attributeValues IterBinding="DepartmentsVO1Iterator" id="DepartmentId">
       <AttrNames>
         <Item Value="DepartmentId"/>
@@ -31,8 +31,10 @@
         <Item Value="LocationId"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="DepartmentsVO1Iterator" id="DepartmentsVO1">
-      <nodeDefinition DefName="model.DepartmentsVO" Name="DepartmentsVO10">
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="DepartmentsVO1Iterator" id="DepartmentsVO11">
+      <nodeDefinition DefName="model.DepartmentsVO" Name="DepartmentsVO110">
         <AttrNames>
           <Item Value="DepartmentId"/>
           <Item Value="DepartmentName"/>
