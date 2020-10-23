@@ -5,9 +5,6 @@
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="90%" id="gc1">
         <af:toolbar id="t1" inlineStyle="font-size:medium;">
-          <af:outputText value="#{'Welcome,&#160;'}" id="ot1"
-                         inlineStyle="font-size:xx-large; color:#0000A0;"/>
-          <af:outputText value="#{securityContext.userName}" id="ot3" inlineStyle="font-size:xx-large; color:#E41B17;"/>
           <!--<af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
                  inlineStyle="font-size:x-large;"/>-->
         </af:toolbar>
@@ -25,26 +22,21 @@
         <af:panelGroupLayout id="pgl2">
           <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo"  id="i1" />
         </af:panelGroupLayout>
+        <af:outputText value="#{'Welcome,&#160;'}" id="ot1" inlineStyle="font-size:60px;padding-left:194px; color:#0000A0;"/>
+        <af:outputText value="#{securityContext.userName}" id="ot3" inlineStyle="font-size:54px; color:#E41B17;"/>
       </af:gridCell>
       <af:gridCell id="gc9">
         <af:toolbar id="t2" inlineStyle="font-size:xx-large;">
-          <af:button text="Employee" id="b1" action="emp" styleClass="gofBtn" inlineStyle="font-size:xx-large;"
-                     icon="#{resource['images:employee (1).png']}"/>
+          <af:button text="Employee" id="b1" action="emp" styleClass="gofBtn" inlineStyle="font-size:34px;"
+                     icon="#{resource['images:employee (1).png']}"
+                     actionListener="#{pageFlowScope.empBean.firstEmpMethod}"/>
           <af:button text="Department" id="b2" action="dept" styleClass="gofBtn"
-                     icon="#{resource['images:employee (1).png']}"/>
+                     icon="#{resource['images:employee (1).png']}" inlineStyle="font-size:34px;"/>
         </af:toolbar>
       </af:gridCell>
       <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc4"/>
     </af:gridRow>
   </af:panelGridLayout>
-  <af:panelStretchLayout id="psl1">
-    <f:facet name="start"/>
-    <f:facet name="end"/>
-    <f:facet name="top"/>
-    <f:facet name="bottom"/>
-    <f:facet name="center">
-      <af:outputText value="GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms.  With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs.  Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards.  Artificial Intelligence/ Machine Learning... Blockchain..."
-                     id="ot2" styleClass="myCustomBox" inlineStyle="font-size:large; color:#A52A2A;"/>
-    </f:facet>
-  </af:panelStretchLayout>
+  <af:outputText value="GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms.  With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs.  Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards.  Artificial Intelligence/ Machine Learning... Blockchain..."
+                 id="ot2" styleClass="myCustomBox" inlineStyle="font-size:large; color:#A52A2A;vertical-align: super;" rendered="false"/>
 </jsp:root>

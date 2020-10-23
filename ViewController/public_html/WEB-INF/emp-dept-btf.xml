@@ -5,15 +5,31 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <input-parameter-definition id="__24">
+      <name>iBtnAdd</name>
+      <value>#{pageFlowScope.iBtnAdd}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__26">
+      <name>iBtnEdit</name>
+      <value>#{pageFlowScope.iBtnEdit}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <return-value-definition id="__22">
+      <name></name>
+    </return-value-definition>
+    <return-value-definition id="__23">
+      <name>returnValue1</name>
+    </return-value-definition>
     <managed-bean id="__4">
       <managed-bean-name>empBean</managed-bean-name>
       <managed-bean-class>view.Employee</managed-bean-class>
-      <managed-bean-scope>view</managed-bean-scope>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__5">
       <managed-bean-name>deptBean</managed-bean-name>
       <managed-bean-class>view.Department</managed-bean-class>
-      <managed-bean-scope>view</managed-bean-scope>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__11">
       <managed-bean-name>button</managed-bean-name>

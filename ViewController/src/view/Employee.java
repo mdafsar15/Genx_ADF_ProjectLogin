@@ -8,8 +8,12 @@ import Utils.CommonHelper;
 import javax.faces.event.ActionEvent;
 
 import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichPopup;
+import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichMasonryLayout;
+import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.context.AdfFacesContext;
 import oracle.adf.view.rich.event.DialogEvent;
@@ -18,10 +22,16 @@ import oracle.adf.view.rich.event.PopupFetchEvent;
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
+import oracle.jbo.ViewObject;
+
 public class Employee {
     private RichPopup bndResTable;
     private RichMasonryLayout masonryLayoutRefresh;
     private RichButton itemPopupBinding;
+    private RichToolbar toolBarBinding;
+    private RichMasonryLayout masonaryBindingRef;
+    private RichGridCell mainPannel;
+    private RichPopup mainHeaderPopup;
 
     public Employee() {
         super();
@@ -56,7 +66,7 @@ public class Employee {
     public RichPopup getBndResTable() {
         return bndResTable;
     }
-
+//
     public void clickOnEditUpdate(DialogEvent dialogEvent) {
         // Add event code here...
         if(DialogEvent.Outcome.ok == dialogEvent.getOutcome().ok) {
@@ -71,22 +81,185 @@ public class Employee {
                     ob.execute();
                 }
     }
-
-  
+//
+//  
+//    
+//    
+//    
+//    
+//    String currentBtnValue = "";
+//    String currentdetBtnValue = "";
+//
+//    public void setCurrentBtnValue(String currentBtnValue) {
+//        this.currentBtnValue = currentBtnValue;
+//    }
+//
+//    public String getCurrentBtnValue() {
+//        return currentBtnValue;
+//    }
+//
+//    public void setCurrentdetBtnValue(String currentdetBtnValue) {
+//        this.currentdetBtnValue = currentdetBtnValue;
+//    }
+//
+//    public String getCurrentdetBtnValue() {
+//        return currentdetBtnValue;
+//    }
+//
+//    boolean btnAddDis = true;
+//    boolean btnEditDis = true;
+//    boolean btnViewDis = false;
+//    boolean btnDelDis = true;
+//    boolean btnRollDis = true;
+//    boolean btnSaveDis = true;
+//
+//    boolean btnTabAddDis = true;
+//    boolean btnTabEditDis = true;
+//    boolean btnTabDelDis = true;
+//    
+//    public void disableAll() {
+//        btnAddDis = true;
+//        btnEditDis = true;
+//        btnDelDis = true;
+//        btnViewDis = false;
+//        btnRollDis = true;
+//        btnSaveDis = true;
+//        btnTabDelDis = true;
+//        btnTabAddDis = true;
+//        btnTabEditDis = true;
+//
+//    }
+//    
+//    public void btnEnableDisable() {
+//        if (currentBtnValue.equals("E") || currentBtnValue.equals("A")) {
+//            disableAll();
+//            btnSaveDis = false;
+//            btnRollDis = false;
+//            btnViewDis = true;
+//
+//            btnTabDelDis = false;
+//            btnTabAddDis = false;
+//            btnTabEditDis = false;
+//        } else if (currentBtnValue.equals("V")) {
+//            disableAll();
+//            btnRollDis = false;
+//            btnViewDis = true;
+//
+//            btnTabDelDis = true;
+//            btnTabAddDis = true;
+//            btnTabEditDis = true;
+////        } else if (currentBtnValue.equals("C") || currentBtnValue.equals("S")) {
+////            btnPermissionMethod();
+////            btnViewDis = false;
+//      }
+//    }
+//
+//    public void btnEditActionListener(ActionEvent actionEvent) {
+//                btnEnableDisable();
+//                CommonHelper.refreshLayout(masonryLayoutRefresh);
+////                CommonHelper.refreshLayout(toolbarBinding);
+//    }
+//
+//    public void EditActionListener(ActionEvent actionEvent) {
+////        JSFUtils.showPopup(itemPopupBinding, null);
+//                CommonHelper.refreshLayout(masonryLayoutRefresh);
+//    //                CommonHelper.refreshLayout(toolbarBinding);
+//    }
+//
+//    public void setMasonryLayoutRefresh(RichMasonryLayout masonryLayoutRefresh) {
+//        this.masonryLayoutRefresh = masonryLayoutRefresh;
+//    }
+//
+//    public RichMasonryLayout getMasonryLayoutRefresh() {
+//        return masonryLayoutRefresh;
+//    }
+//
+//    public void setItemPopupBinding(RichButton itemPopupBinding) {
+//        this.itemPopupBinding = itemPopupBinding;
+//    }
+//
+//    public RichButton getItemPopupBinding() {
+//        return itemPopupBinding;
+//    }
+//
+//
+//    public void setBtnAddDis(boolean btnAddDis) {
+//        this.btnAddDis = btnAddDis;
+//    }
+//
+//    public boolean isBtnAddDis() {
+//        return btnAddDis;
+//    }
+//
+//    public void setBtnEditDis(boolean btnEditDis) {
+//        this.btnEditDis = btnEditDis;
+//    }
+//
+//    public boolean isBtnEditDis() {
+//        return btnEditDis;
+//    }
+//
+//    public void setBtnViewDis(boolean btnViewDis) {
+//        this.btnViewDis = btnViewDis;
+//    }
+//
+//    public boolean isBtnViewDis() {
+//        return btnViewDis;
+//    }
+//
+//    public void setBtnDelDis(boolean btnDelDis) {
+//        this.btnDelDis = btnDelDis;
+//    }
+//
+//    public boolean isBtnDelDis() {
+//        return btnDelDis;
+//    }
+//
+//    public void setBtnRollDis(boolean btnRollDis) {
+//        this.btnRollDis = btnRollDis;
+//    }
+//
+//    public boolean isBtnRollDis() {
+//        return btnRollDis;
+//    }
+//
+//    public void setBtnSaveDis(boolean btnSaveDis) {
+//        this.btnSaveDis = btnSaveDis;
+//    }
+//
+//    public boolean isBtnSaveDis() {
+//        return btnSaveDis;
+//    }
+//
+//    public void setBtnTabAddDis(boolean btnTabAddDis) {
+//        this.btnTabAddDis = btnTabAddDis;
+//    }
+//
+//    public boolean isBtnTabAddDis() {
+//        return btnTabAddDis;
+//    }
+//
+//    public void setBtnTabEditDis(boolean btnTabEditDis) {
+//        this.btnTabEditDis = btnTabEditDis;
+//    }
+//
+//    public boolean isBtnTabEditDis() {
+//        return btnTabEditDis;
+//    }
+//
+//    public void setBtnTabDelDis(boolean btnTabDelDis) {
+//        this.btnTabDelDis = btnTabDelDis;
+//    }
+//
+//    public boolean isBtnTabDelDis() {
+//        return btnTabDelDis;
+//    }
     
     
-    
+    //-----------------------------------Work----------------------------------------------------------
     
     String currentBtnValue = "";
     String currentdetBtnValue = "";
-
-    public void setCurrentBtnValue(String currentBtnValue) {
-        this.currentBtnValue = currentBtnValue;
-    }
-
-    public String getCurrentBtnValue() {
-        return currentBtnValue;
-    }
 
     public void setCurrentdetBtnValue(String currentdetBtnValue) {
         this.currentdetBtnValue = currentdetBtnValue;
@@ -95,6 +268,7 @@ public class Employee {
     public String getCurrentdetBtnValue() {
         return currentdetBtnValue;
     }
+
 
     boolean btnAddDis = true;
     boolean btnEditDis = true;
@@ -106,119 +280,13 @@ public class Employee {
     boolean btnTabAddDis = true;
     boolean btnTabEditDis = true;
     boolean btnTabDelDis = true;
-    
-    public void disableAll() {
-        btnAddDis = true;
-        btnEditDis = true;
-        btnDelDis = true;
-        btnViewDis = false;
-        btnRollDis = true;
-        btnSaveDis = true;
-        btnTabDelDis = true;
-        btnTabAddDis = true;
-        btnTabEditDis = true;
 
-    }
-    
-    public void btnEnableDisable() {
-        if (currentBtnValue.equals("E") || currentBtnValue.equals("A")) {
-            disableAll();
-            btnSaveDis = false;
-            btnRollDis = false;
-            btnViewDis = true;
-
-            btnTabDelDis = false;
-            btnTabAddDis = false;
-            btnTabEditDis = false;
-        } else if (currentBtnValue.equals("V")) {
-            disableAll();
-            btnRollDis = false;
-            btnViewDis = true;
-
-            btnTabDelDis = true;
-            btnTabAddDis = true;
-            btnTabEditDis = true;
-//        } else if (currentBtnValue.equals("C") || currentBtnValue.equals("S")) {
-//            btnPermissionMethod();
-//            btnViewDis = false;
-      }
+    public void setBtnTabDelDis(boolean btnTabDelDis) {
+        this.btnTabDelDis = btnTabDelDis;
     }
 
-    public void btnEditActionListener(ActionEvent actionEvent) {
-                btnEnableDisable();
-                CommonHelper.refreshLayout(masonryLayoutRefresh);
-//                CommonHelper.refreshLayout(toolbarBinding);
-    }
-
-    public void EditActionListener(ActionEvent actionEvent) {
-//        JSFUtils.showPopup(itemPopupBinding, null);
-                CommonHelper.refreshLayout(masonryLayoutRefresh);
-    //                CommonHelper.refreshLayout(toolbarBinding);
-    }
-
-    public void setMasonryLayoutRefresh(RichMasonryLayout masonryLayoutRefresh) {
-        this.masonryLayoutRefresh = masonryLayoutRefresh;
-    }
-
-    public RichMasonryLayout getMasonryLayoutRefresh() {
-        return masonryLayoutRefresh;
-    }
-
-    public void setItemPopupBinding(RichButton itemPopupBinding) {
-        this.itemPopupBinding = itemPopupBinding;
-    }
-
-    public RichButton getItemPopupBinding() {
-        return itemPopupBinding;
-    }
-
-
-    public void setBtnAddDis(boolean btnAddDis) {
-        this.btnAddDis = btnAddDis;
-    }
-
-    public boolean isBtnAddDis() {
-        return btnAddDis;
-    }
-
-    public void setBtnEditDis(boolean btnEditDis) {
-        this.btnEditDis = btnEditDis;
-    }
-
-    public boolean isBtnEditDis() {
-        return btnEditDis;
-    }
-
-    public void setBtnViewDis(boolean btnViewDis) {
-        this.btnViewDis = btnViewDis;
-    }
-
-    public boolean isBtnViewDis() {
-        return btnViewDis;
-    }
-
-    public void setBtnDelDis(boolean btnDelDis) {
-        this.btnDelDis = btnDelDis;
-    }
-
-    public boolean isBtnDelDis() {
-        return btnDelDis;
-    }
-
-    public void setBtnRollDis(boolean btnRollDis) {
-        this.btnRollDis = btnRollDis;
-    }
-
-    public boolean isBtnRollDis() {
-        return btnRollDis;
-    }
-
-    public void setBtnSaveDis(boolean btnSaveDis) {
-        this.btnSaveDis = btnSaveDis;
-    }
-
-    public boolean isBtnSaveDis() {
-        return btnSaveDis;
+    public boolean isBtnTabDelDis() {
+        return btnTabDelDis;
     }
 
     public void setBtnTabAddDis(boolean btnTabAddDis) {
@@ -237,11 +305,204 @@ public class Employee {
         return btnTabEditDis;
     }
 
-    public void setBtnTabDelDis(boolean btnTabDelDis) {
-        this.btnTabDelDis = btnTabDelDis;
+    public void setBtnViewDis(boolean btnViewDis) {
+        this.btnViewDis = btnViewDis;
     }
 
-    public boolean isBtnTabDelDis() {
-        return btnTabDelDis;
+    public boolean isBtnViewDis() {
+        return btnViewDis;
+    }
+
+    public void setBtnRollDis(boolean btnRollDis) {
+        this.btnRollDis = btnRollDis;
+    }
+
+    public boolean getBtnRollDis() {
+        return btnRollDis;
+    }
+
+    public void setBtnSaveDis(boolean btnSaveDis) {
+        this.btnSaveDis = btnSaveDis;
+    }
+
+    public boolean getBtnSaveDis() {
+        return btnSaveDis;
+    }
+
+    public void setBtnAddDis(boolean btnAddDis) {
+        this.btnAddDis = btnAddDis;
+    }
+
+    public boolean getBtnAddDis() {
+        return btnAddDis;
+    }
+
+    public void setBtnEditDis(boolean btnEditDis) {
+        this.btnEditDis = btnEditDis;
+    }
+
+    public boolean getBtnEditDis() {
+        return btnEditDis;
+    }
+
+    public void setBtnDelDis(boolean btnDelDis) {
+        this.btnDelDis = btnDelDis;
+    }
+
+    public boolean getBtnDelDis() {
+        return btnDelDis;
+    }
+
+    public void setCurrentBtnValue(String currentBtnValue) {
+        this.currentBtnValue = currentBtnValue;
+    }
+
+    public String getCurrentBtnValue() {
+        return currentBtnValue;
+    }
+    
+    public void disableAll() {
+        btnAddDis = true;
+        btnEditDis = true;
+        btnDelDis = true;
+        btnViewDis = false;
+        btnRollDis = true;
+        btnSaveDis = true;
+        btnTabDelDis = true;
+        btnTabAddDis = true;
+        btnTabEditDis = true;
+
+    }
+
+
+    public void btnEnableDisable() {
+        if (currentBtnValue.equals("E") || currentBtnValue.equals("A")) {
+            disableAll();
+            btnSaveDis = false;
+            btnRollDis = false;
+            btnViewDis = true;
+
+            btnTabDelDis = false;
+            btnTabAddDis = false;
+            btnTabEditDis = false;
+        } else if (currentBtnValue.equals("V")) {
+            disableAll();
+            btnRollDis = false;
+            btnViewDis = true;
+
+            btnTabDelDis = true;
+            btnTabAddDis = true;
+            btnTabEditDis = true;
+        } else if (currentBtnValue.equals("C") || currentBtnValue.equals("S")) {
+//            btnPermissionMethod();
+            disableAll();
+//
+ AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnAdd", "Y"); //remove before merging
+                AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnEdit", "Y");
+                
+        btnAddDis = (ADFContext.getCurrent()
+                               .getPageFlowScope()
+                               .get("iBtnAdd")
+                               .equals("Y") ? false : true);
+        btnEditDis = (ADFContext.getCurrent()
+                                .getPageFlowScope()
+                                .get("iBtnEdit")
+                                .equals("Y") ? false : true);
+            btnViewDis = false;
+            
+        }
+    }
+    
+    
+
+    public void addActionListener(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        JSFUtils.showPopup(mainHeaderPopup, null);
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+    }
+    
+    public void btnEditActionListener(ActionEvent actionEvent) {
+                    btnEnableDisable();
+                    CommonHelper.refreshLayout(masonaryBindingRef);
+                    CommonHelper.refreshLayout(toolBarBinding);
+        }
+
+        public void EditActionListener(ActionEvent actionEvent) {
+    //        JSFUtils.showPopup(itemPopupBinding, null);
+                    CommonHelper.refreshLayout(masonaryBindingRef);
+                        CommonHelper.refreshLayout(toolBarBinding);
+        }
+
+    public void save(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        CommonHelper.findOperation("Commit").execute();
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+    }
+
+    public void cancel(ActionEvent actionEvent) {
+      
+      btnEnableDisable();
+        CommonHelper.findOperation("Rollback").execute();
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+        CommonHelper.refreshLayout(    mainPannel);
+
+    }
+
+    public void setToolBarBinding(RichToolbar toolBarBinding) {
+        this.toolBarBinding = toolBarBinding;
+    }
+
+    public RichToolbar getToolBarBinding() {
+        return toolBarBinding;
+    }
+
+    public void setMasonaryBindingRef(RichMasonryLayout masonaryBindingRef) {
+        this.masonaryBindingRef = masonaryBindingRef;
+    }
+
+    public RichMasonryLayout getMasonaryBindingRef() {
+        return masonaryBindingRef;
+    }
+
+    public void firstEmpMethod(ActionEvent actionEvent) {
+        // Add event code here...
+disableAll();
+//
+ AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnAdd", "Y"); //remove before merging
+                AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnEdit", "Y");
+                
+        btnAddDis = (ADFContext.getCurrent()
+                               .getPageFlowScope()
+                               .get("iBtnAdd")
+                               .equals("Y") ? false : true);
+        btnEditDis = (ADFContext.getCurrent()
+                                .getPageFlowScope()
+                                .get("iBtnEdit")
+                                .equals("Y") ? false : true);
+//        btnEnableDisable();
+
+//        CommonHelper.refreshLayout(masonaryBindingRef);
+//            CommonHelper.refreshLayout(toolBarBinding);
+    }
+
+    public void setMainPannel(RichGridCell mainPannel) {
+        this.mainPannel = mainPannel;
+    }
+
+    public RichGridCell getMainPannel() {
+        return mainPannel;
+    }
+
+    public void setMainHeaderPopup(RichPopup mainHeaderPopup) {
+        this.mainHeaderPopup = mainHeaderPopup;
+    }
+
+    public RichPopup getMainHeaderPopup() {
+        return mainHeaderPopup;
     }
 }
