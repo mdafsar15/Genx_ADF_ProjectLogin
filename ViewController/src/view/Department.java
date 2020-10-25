@@ -1,5 +1,7 @@
 package view;
 
+import SCM_JR_CUST45_Utils.JSFUtils;
+
 import Utils.CommonHelper;
 
 import javax.faces.event.ActionEvent;
@@ -7,6 +9,7 @@ import javax.faces.event.ActionEvent;
 import oracle.adf.model.BindingContext;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichPopup;
+import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichMasonryLayout;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.context.AdfFacesContext;
@@ -18,9 +21,11 @@ import oracle.binding.OperationBinding;
 
 public class Department {
     private RichPopup bndResTable;
-    private RichMasonryLayout masonryLayoutRefreshDep;
-    private RichToolbar toolbarBinding;
-
+    private RichToolbar toolBarBinding;
+    private RichMasonryLayout masonaryBindingRef;
+    private RichGridCell mainPannel;
+    private RichPopup mainHeaderPopup;
+   
     public Department() {
         super();
     }
@@ -75,12 +80,20 @@ public class Department {
         return bndResTable;
     }
 
-//    public void btnEditActionListener(ActionEvent actionEvent) {
-//        // Add event code here...
-//    }
-//        boolean btnAddDis = true;
     
-     boolean btnAddDis = true;
+    String currentBtnValue = "";
+    String currentdetBtnValue = "";
+
+    public void setCurrentdetBtnValue(String currentdetBtnValue) {
+        this.currentdetBtnValue = currentdetBtnValue;
+    }
+
+    public String getCurrentdetBtnValue() {
+        return currentdetBtnValue;
+    }
+
+
+    boolean btnAddDis = true;
     boolean btnEditDis = true;
     boolean btnViewDis = false;
     boolean btnDelDis = true;
@@ -90,136 +103,13 @@ public class Department {
     boolean btnTabAddDis = true;
     boolean btnTabEditDis = true;
     boolean btnTabDelDis = true;
-    boolean btnRollDisiable=true;
-    
-    public void disableAll() {
-        btnAddDis = true;
-        btnEditDis = true;
-        btnDelDis = true;
-        btnViewDis = false;
-        btnRollDis = true;
-        btnSaveDis = true;
-        btnTabDelDis = true;
-        btnTabAddDis = true;
-        btnTabEditDis = true;
-        btnRollDisiable=true;
 
-    }
-    String currentBtnValue = "";
-    String currentdetBtnValue = "";
-    private String regionReturn = null;
-    
-    public void btnPermissionMethod() {
-        disableAll();
-                                                       
-        btnAddDis = (ADFContext.getCurrent().getPageFlowScope().get("iBtnAdd").equals("Y") ? false : true);
-        btnEditDis = (ADFContext.getCurrent().getPageFlowScope().get("iBtnEdit").equals("Y") ? false : true);
-        btnDelDis = (ADFContext.getCurrent().getPageFlowScope().get("iBtnDel").equals("Y") ? false : true);
-        regionReturn =
-            ADFContext.getCurrent().getPageFlowScope().get("iRegionView") == null ? "GridView" :
-            ADFContext.getCurrent().getPageFlowScope().get("iRegionView").toString();
-    }
-    
-    public void btnEnableDisable() {
-        if (currentBtnValue.equals("E") || currentBtnValue.equals("A")) {
-            disableAll();
-            btnSaveDis = false;
-            btnRollDis = false;
-            btnViewDis = true;
-
-            btnTabDelDis = false;
-            btnTabAddDis = false;
-            btnTabEditDis = false;
-        } else if (currentBtnValue.equals("V")) {
-            disableAll();
-            btnRollDis = false;
-            btnViewDis = true;
-
-            btnTabDelDis = true;
-            btnTabAddDis = true;
-            btnTabEditDis = true;
-            } else if (currentBtnValue.equals("C") || currentBtnValue.equals("S")) {
-                btnPermissionMethod();
-                btnViewDis = false;
-      }
-        else if (currentBtnValue.equals("M") || currentBtnValue.equals("N")) {
-        disableAll();
-        btnSaveDis = false;
-        btnRollDisiable = false;
-        btnViewDis = true;
-        
-
-        btnTabDelDis = false;
-        btnTabAddDis = false;
-        btnTabEditDis = false;
-    }
-    }
-    
-    public void btnEditActionListener(ActionEvent actionEvent) {
-                btnEnableDisable();
-                CommonHelper.refreshLayout(masonryLayoutRefreshDep);
-                CommonHelper.refreshLayout(toolbarBinding);
+    public void setBtnTabDelDis(boolean btnTabDelDis) {
+        this.btnTabDelDis = btnTabDelDis;
     }
 
-    public void EditActionListener(ActionEvent actionEvent) {
-    //        JSFUtils.showPopup(itemPopupBinding, null);
-                CommonHelper.refreshLayout(masonryLayoutRefreshDep);
-                CommonHelper.refreshLayout(toolbarBinding);
-    }
-    
-    public void btnCanActionListener(ActionEvent actionEvent) {
-            btnEnableDisable();
-            CommonHelper.findOperation("Rollback").execute();
-            CommonHelper.refreshLayout(masonryLayoutRefreshDep);
-            CommonHelper.refreshLayout(toolbarBinding);
-        }
-    
-    public void btnSaveActionListener(ActionEvent actionEvent) {
-        btnEnableDisable();
-        CommonHelper.findOperation("Commit").execute();
-        CommonHelper.refreshLayout(masonryLayoutRefreshDep);
-        CommonHelper.refreshLayout(toolbarBinding);
-        
-    }
-
-    public void setBtnEditDis(boolean btnEditDis) {
-        this.btnEditDis = btnEditDis;
-    }
-
-    public boolean isBtnEditDis() {
-        return btnEditDis;
-    }
-
-    public void setBtnViewDis(boolean btnViewDis) {
-        this.btnViewDis = btnViewDis;
-    }
-
-    public boolean isBtnViewDis() {
-        return btnViewDis;
-    }
-
-    public void setBtnDelDis(boolean btnDelDis) {
-        this.btnDelDis = btnDelDis;
-    }
-
-    public boolean isBtnDelDis() {
-        return btnDelDis;
-    }
-
-    public void setBtnRollDis(boolean btnRollDis) {
-        this.btnRollDis = btnRollDis;
-    }
-
-    public boolean isBtnRollDis() {
-        return btnRollDis;
-    }
-
-    public void setBtnSaveDis(boolean btnSaveDis) {
-        this.btnSaveDis = btnSaveDis;
-    }
-
-    public boolean isBtnSaveDis() {
-        return btnSaveDis;
+    public boolean isBtnTabDelDis() {
+        return btnTabDelDis;
     }
 
     public void setBtnTabAddDis(boolean btnTabAddDis) {
@@ -238,12 +128,52 @@ public class Department {
         return btnTabEditDis;
     }
 
-    public void setBtnTabDelDis(boolean btnTabDelDis) {
-        this.btnTabDelDis = btnTabDelDis;
+    public void setBtnViewDis(boolean btnViewDis) {
+        this.btnViewDis = btnViewDis;
     }
 
-    public boolean isBtnTabDelDis() {
-        return btnTabDelDis;
+    public boolean isBtnViewDis() {
+        return btnViewDis;
+    }
+
+    public void setBtnRollDis(boolean btnRollDis) {
+        this.btnRollDis = btnRollDis;
+    }
+
+    public boolean getBtnRollDis() {
+        return btnRollDis;
+    }
+
+    public void setBtnSaveDis(boolean btnSaveDis) {
+        this.btnSaveDis = btnSaveDis;
+    }
+
+    public boolean getBtnSaveDis() {
+        return btnSaveDis;
+    }
+
+    public void setBtnAddDis(boolean btnAddDis) {
+        this.btnAddDis = btnAddDis;
+    }
+
+    public boolean getBtnAddDis() {
+        return btnAddDis;
+    }
+
+    public void setBtnEditDis(boolean btnEditDis) {
+        this.btnEditDis = btnEditDis;
+    }
+
+    public boolean getBtnEditDis() {
+        return btnEditDis;
+    }
+
+    public void setBtnDelDis(boolean btnDelDis) {
+        this.btnDelDis = btnDelDis;
+    }
+
+    public boolean getBtnDelDis() {
+        return btnDelDis;
     }
 
     public void setCurrentBtnValue(String currentBtnValue) {
@@ -253,58 +183,165 @@ public class Department {
     public String getCurrentBtnValue() {
         return currentBtnValue;
     }
+    
+    public void disableAll() {
+        btnAddDis = true;
+        btnEditDis = true;
+        btnDelDis = true;
+        btnViewDis = false;
+        btnRollDis = true;
+        btnSaveDis = true;
+        btnTabDelDis = true;
+        btnTabAddDis = true;
+        btnTabEditDis = true;
 
-    public void setCurrentdetBtnValue(String currentdetBtnValue) {
-        this.currentdetBtnValue = currentdetBtnValue;
-    }
-
-    public String getCurrentdetBtnValue() {
-        return currentdetBtnValue;
-    }
-
-    public void setMasonryLayoutRefreshDep(RichMasonryLayout masonryLayoutRefreshDep) {
-        this.masonryLayoutRefreshDep = masonryLayoutRefreshDep;
-    }
-
-    public RichMasonryLayout getMasonryLayoutRefreshDep() {
-        return masonryLayoutRefreshDep;
-    }
-
-  
-
-    public void setToolbarBinding(RichToolbar toolbarBinding) {
-        this.toolbarBinding = toolbarBinding;
-    }
-
-    public RichToolbar getToolbarBinding() {
-        return toolbarBinding;
     }
 
 
-    public void setBtnAddDis(boolean btnAddDis) {
-        this.btnAddDis = btnAddDis;
-    }
+    public void btnEnableDisable() {
+        if (currentBtnValue.equals("E") || currentBtnValue.equals("A")) {
+            disableAll();
+            btnSaveDis = false;
+            btnRollDis = false;
+            btnViewDis = true;
 
-    public boolean isBtnAddDis() {
-        return btnAddDis;
-    }
+            btnTabDelDis = false;
+            btnTabAddDis = false;
+            btnTabEditDis = false;
+        } else if (currentBtnValue.equals("V")) {
+            disableAll();
+            btnRollDis = false;
+            btnViewDis = true;
 
-    public void setRegionReturn(String regionReturn) {
-        this.regionReturn = regionReturn;
+            btnTabDelDis = true;
+            btnTabAddDis = true;
+            btnTabEditDis = true;
+        } else if (currentBtnValue.equals("C") || currentBtnValue.equals("S")) {
+    //            btnPermissionMethod();
+            disableAll();
+    //
+    AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnAdd", "Y"); //remove before merging
+                AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnEdit", "Y");
+                
+        btnAddDis = (ADFContext.getCurrent()
+                               .getPageFlowScope()
+                               .get("iBtnAdd")
+                               .equals("Y") ? false : true);
+        btnEditDis = (ADFContext.getCurrent()
+                                .getPageFlowScope()
+                                .get("iBtnEdit")
+                                .equals("Y") ? false : true);
+            btnViewDis = false;
+            
+        }
     }
-
-    public String getRegionReturn() {
-        return regionReturn;
-    }
-
-    public void setBtnRollDisiable(boolean btnRollDisiable) {
-        this.btnRollDisiable = btnRollDisiable;
-    }
-
-    public boolean isBtnRollDisiable() {
-        return btnRollDisiable;
-    }
-    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+    
     
 
+    public void addActionListener(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        JSFUtils.showPopup(mainHeaderPopup, null);
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+    }
+    
+    public void btnEditActionListener(ActionEvent actionEvent) {
+                    btnEnableDisable();
+                    CommonHelper.refreshLayout(masonaryBindingRef);
+                    CommonHelper.refreshLayout(toolBarBinding);
+        }
+
+        public void EditActionListener(ActionEvent actionEvent) {
+    //        JSFUtils.showPopup(itemPopupBinding, null);
+                    CommonHelper.refreshLayout(masonaryBindingRef);
+                        CommonHelper.refreshLayout(toolBarBinding);
+        }
+
+    public void save(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        CommonHelper.findOperation("Commit").execute();
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+    }
+
+    public void cancel(ActionEvent actionEvent) {
+      
+      btnEnableDisable();
+        CommonHelper.findOperation("Rollback").execute();
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+        CommonHelper.refreshLayout(    mainPannel);
+
+    }
+
+    public void setToolBarBinding(RichToolbar toolBarBinding) {
+        this.toolBarBinding = toolBarBinding;
+    }
+
+    public RichToolbar getToolBarBinding() {
+        return toolBarBinding;
+    }
+
+    public void setMasonaryBindingRef(RichMasonryLayout masonaryBindingRef) {
+        this.masonaryBindingRef = masonaryBindingRef;
+    }
+
+    public RichMasonryLayout getMasonaryBindingRef() {
+        return masonaryBindingRef;
+    }
+
+    public void firstEmpMethod(ActionEvent actionEvent) {
+        // Add event code here...
+    disableAll();
+    //
+    AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnAdd", "Y"); //remove before merging
+                AdfFacesContext.getCurrentInstance().getPageFlowScope().put("iBtnEdit", "Y");
+                
+        btnAddDis = (ADFContext.getCurrent()
+                               .getPageFlowScope()
+                               .get("iBtnAdd")
+                               .equals("Y") ? false : true);
+        btnEditDis = (ADFContext.getCurrent()
+                                .getPageFlowScope()
+                                .get("iBtnEdit")
+                                .equals("Y") ? false : true);
+    //        btnEnableDisable();
+
+    //        CommonHelper.refreshLayout(masonaryBindingRef);
+    //            CommonHelper.refreshLayout(toolBarBinding);
+    }
+
+    public void setMainPannel(RichGridCell mainPannel) {
+        this.mainPannel = mainPannel;
+    }
+
+    public RichGridCell getMainPannel() {
+        return mainPannel;
+    }
+
+    public void setMainHeaderPopup(RichPopup mainHeaderPopup) {
+        this.mainHeaderPopup = mainHeaderPopup;
+    }
+
+    public RichPopup getMainHeaderPopup() {
+        return mainHeaderPopup;
+    }
+
+
+    public void addCreateDep(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        JSFUtils.showPopup(mainHeaderPopup, null);
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+    }
+
+    public void editDep(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        CommonHelper.refreshLayout(masonaryBindingRef);
+        CommonHelper.refreshLayout(toolBarBinding);
+    }
 }

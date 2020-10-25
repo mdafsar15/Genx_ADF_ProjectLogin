@@ -42,7 +42,8 @@
     </af:dialog>
   </af:popup>
   <af:popup childCreation="deferred" autoCancel="disabled" id="padddept"
-            popupFetchListener="#{pageFlowScope.deptBean.onCreateNewEmp}">
+            popupFetchListener="#{pageFlowScope.empBean.onCreateNewEmp}"
+            binding="#{pageFlowScope.empBean.mainHeaderPopup}">
     <af:dialog id="d1" title="Department Details" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
       <af:panelFormLayout id="pfl1">
@@ -89,27 +90,30 @@
   <af:panelGridLayout id="pgl1" inlineStyle="background-color:white;">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="50%" id="gc1" inlineStyle="background-color:white;"/>
-      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2" inlineStyle="background-color:white;">
-        <af:toolbar id="t2" binding="#{pageFlowScope.deptBean.toolbarBinding}">
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2" inlineStyle="background-color:white;"
+                   binding="#{pageFlowScope.empBean.mainPannel}">
+        <af:toolbar id="t2" binding="#{pageFlowScope.empBean.toolBarBinding}">
            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
           <af:button text="Create" id="b1" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}"
-                     actionListener="#{pageFlowScope.deptBean.btnEditActionListener}">
-            <af:showPopupBehavior popupId="padddept"/>
+                     disabled="#{pageFlowScope.empBean.btnAddDis}" disabledIcon="#{resource['images:btnEditG.png']}"
+                     actionListener="#{pageFlowScope.empBean.addActionListener}">
+            <af:setActionListener from="A" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
           <af:button text="Edit" id="b2" inlineStyle="font-size:large;" icon="#{resource['images:btnEdit.png']}"
-                     actionListener="#{pageFlowScope.deptBean.btnEditActionListener}">
-            <af:setActionListener from="E" to="#{pageFlowScope.deptBean.currentBtnValue}"/>
+                     actionListener="#{pageFlowScope.empBean.btnEditActionListener}"
+                     disabled="#{pageFlowScope.empBean.btnEditDis}" disabledIcon="#{resource['images:btnEditG.png']}">
+            <af:setActionListener from="E" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
-          <af:button text="Save" disabled="#{!bindings.Commit.enabled}"
+          <af:button text="Save" disabled="#{pageFlowScope.empBean.btnSaveDis}"
                      id="b3" icon="#{resource['images:btnSave.png']}" inlineStyle="font-size:large;"
                      disabledIcon="#{resource['images:btnSaveG.png']}"
-                     actionListener="#{pageFlowScope.deptBean.btnSaveActionListener}">
-            <af:setActionListener from="S" to="#{pageFlowScope.deptBean.currentBtnValue}"/>
+                     actionListener="#{pageFlowScope.empBean.save}">
+            <af:setActionListener from="S" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
-          <af:button actionListener="#{pageFlowScope.deptBean.btnCanActionListener}" text="Cancel" immediate="true" id="b4"
+          <af:button actionListener="#{pageFlowScope.empBean.cancel}" text="Cancel" immediate="true" id="b4"
                      icon="#{resource['images:btnCan.png']}" inlineStyle="font-size:large;"
-                     disabledIcon="#{resource['images:btnCanG.png']}" disabled="#{pageFlowScope.deptBean.btnRollDis}">
-            <af:setActionListener from="E" to="#{pageFlowScope.deptBean.currentBtnValue}"/>
+                     disabledIcon="#{resource['images:btnCanG.png']}" disabled="#{pageFlowScope.empBean.btnRollDis}">
+            <af:setActionListener from="C" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
           <af:button text="Employees" id="b6" action="backToEmp" inlineStyle="font-size:large;"
                      icon="#{resource['images:btnExit.png']}"/>
@@ -124,7 +128,7 @@
     </af:gridRow>
   </af:panelGridLayout>
   <af:masonryLayout id="ml1" inlineStyle="background-color:white;"
-                    binding="#{pageFlowScope.deptBean.masonryLayoutRefreshDep}">
+                    binding="#{pageFlowScope.empBean.masonaryBindingRef}">
     <af:panelGroupLayout id="pgl2">
       <af:panelCollection id="pc1" styleClass="AFStretchWidth">
         <f:facet name="menus"/>
@@ -176,8 +180,8 @@
               <af:button id="b7"
                          hoverIcon="#{resource['images:btneditblue16.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
-                         disabled="#{pageFlowScope.deptBean.btnTabEditDis}"
-                         actionListener="#{pageFlowScope.deptBean.EditActionListener}"
+                         disabled="#{pageFlowScope.empBean.btnTabEditDis}"
+                         actionListener="#{pageFlowScope.empBean.EditActionListener}"
                          icon="#{resource['images:btneditblue16.png']}">
                 <af:showPopupBehavior popupId=":::peditdept"/>
                 <af:setActionListener from="E" to="#{pageFlowScope.deptBean.currentdetBtnValue}"/>
@@ -188,5 +192,4 @@
       </af:panelCollection>
     </af:panelGroupLayout>
   </af:masonryLayout>
-  <af:showPopupBehavior popupId="peditdept"/>
 </jsp:root>
