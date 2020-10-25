@@ -198,7 +198,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
           <af:button text="Create " id="b1" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}"
                      actionListener="#{pageFlowScope.empBean.addActionListener}"
-                     disabled="#{pageFlowScope.empBean.btnAddDis}">
+                     disabled="#{pageFlowScope.empBean.btnAddDis}" disabledIcon="#{resource['images:btnAddG.png']}">
             <af:setActionListener from="A" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
           <af:button text="Edit Data" id="b2" inlineStyle="font-size:large;"

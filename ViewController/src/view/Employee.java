@@ -32,6 +32,10 @@ public class Employee {
     private RichMasonryLayout masonaryBindingRef;
     private RichGridCell mainPannel;
     private RichPopup mainHeaderPopup;
+    private RichMasonryLayout massonryLayoutDept;
+    private RichGridCell mainPanelDept;
+    private RichToolbar toolBarBindingDept;
+    private RichPopup mainHeaderPopupDept;
 
     public Employee() {
         super();
@@ -453,6 +457,42 @@ public class Employee {
 
     }
 
+//-----------Department-------------
+    
+    
+    
+        public void createDept(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        JSFUtils.showPopup(mainHeaderPopupDept, null);
+        CommonHelper.refreshLayout(massonryLayoutDept);
+        CommonHelper.refreshLayout(toolBarBindingDept);
+    }
+
+    public void editDept(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        CommonHelper.refreshLayout(massonryLayoutDept);
+        CommonHelper.refreshLayout(toolBarBindingDept);
+    }
+
+    public void saveDept(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        CommonHelper.findOperation("Commit").execute();
+        CommonHelper.refreshLayout(massonryLayoutDept);
+        CommonHelper.refreshLayout(toolBarBindingDept);
+    }
+
+    public void cancelDept(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+          CommonHelper.findOperation("Rollback").execute();
+          CommonHelper.refreshLayout(massonryLayoutDept);
+          CommonHelper.refreshLayout(toolBarBindingDept);
+    }
+    
+    
     public void setToolBarBinding(RichToolbar toolBarBinding) {
         this.toolBarBinding = toolBarBinding;
     }
@@ -505,4 +545,38 @@ disableAll();
     public RichPopup getMainHeaderPopup() {
         return mainHeaderPopup;
     }
+
+    public void setMassonryLayoutDept(RichMasonryLayout massonryLayoutDept) {
+        this.massonryLayoutDept = massonryLayoutDept;
+    }
+
+    public RichMasonryLayout getMassonryLayoutDept() {
+        return massonryLayoutDept;
+    }
+
+    public void setMainPanelDept(RichGridCell mainPanelDept) {
+        this.mainPanelDept = mainPanelDept;
+    }
+
+    public RichGridCell getMainPanelDept() {
+        return mainPanelDept;
+    }
+
+    public void setToolBarBindingDept(RichToolbar toolBarBindingDept) {
+        this.toolBarBindingDept = toolBarBindingDept;
+    }
+
+    public RichToolbar getToolBarBindingDept() {
+        return toolBarBindingDept;
+    }
+
+    public void setMainHeaderPopupDept(RichPopup mainHeaderPopupDept) {
+        this.mainHeaderPopupDept = mainHeaderPopupDept;
+    }
+
+    public RichPopup getMainHeaderPopupDept() {
+        return mainHeaderPopupDept;
+    }
+
+ 
 }

@@ -42,8 +42,8 @@
     </af:dialog>
   </af:popup>
   <af:popup childCreation="deferred" autoCancel="disabled" id="padddept"
-            popupFetchListener="#{pageFlowScope.deptBean.onCreateNewEmp}"
-            binding="#{pageFlowScope.empBean.mainHeaderPopup}">
+            popupFetchListener="#{pageFlowScope.empBean.onCreateNewEmp}"
+            binding="#{pageFlowScope.empBean.mainHeaderPopupDept}">
     <af:dialog id="d1" title="Department Details" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
       <af:panelFormLayout id="pfl1">
@@ -91,26 +91,26 @@
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="50%" id="gc1" inlineStyle="background-color:white;"/>
       <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2" inlineStyle="background-color:white;"
-                   binding="#{pageFlowScope.empBean.mainPannel}">
-        <af:toolbar id="t2" binding="#{pageFlowScope.empBean.toolBarBinding}">
+                   binding="#{pageFlowScope.empBean.mainPanelDept}">
+        <af:toolbar id="t2" binding="#{pageFlowScope.empBean.toolBarBindingDept}">
            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
           <af:button text="Create" id="b1" inlineStyle="font-size:large;" icon="#{resource['images:btnAdd.png']}"
-                     disabled="#{pageFlowScope.empBean.btnAddDis}" disabledIcon="#{resource['images:btnEditG.png']}"
-                     actionListener="#{pageFlowScope.empBean.addActionListener}">
+                     actionListener="#{pageFlowScope.empBean.createDept}"
+                     disabled="#{pageFlowScope.empBean.btnAddDis}" disabledIcon="#{resource['images:btnAddG.png']}">
             <af:setActionListener from="A" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
           <af:button text="Edit" id="b2" inlineStyle="font-size:large;" icon="#{resource['images:btnEdit.png']}"
-                     actionListener="#{pageFlowScope.empBean.btnEditActionListener}"
+                     actionListener="#{pageFlowScope.empBean.editDept}"
                      disabled="#{pageFlowScope.empBean.btnEditDis}" disabledIcon="#{resource['images:btnEditG.png']}">
             <af:setActionListener from="E" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
           <af:button text="Save" disabled="#{pageFlowScope.empBean.btnSaveDis}"
                      id="b3" icon="#{resource['images:btnSave.png']}" inlineStyle="font-size:large;"
                      disabledIcon="#{resource['images:btnSaveG.png']}"
-                     actionListener="#{pageFlowScope.empBean.save}">
+                     actionListener="#{pageFlowScope.empBean.saveDept}">
             <af:setActionListener from="S" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:button>
-          <af:button actionListener="#{pageFlowScope.empBean.cancel}" text="Cancel" immediate="true" id="b4"
+          <af:button actionListener="#{pageFlowScope.empBean.cancelDept}" text="Cancel" immediate="true" id="b4"
                      icon="#{resource['images:btnCan.png']}" inlineStyle="font-size:large;"
                      disabledIcon="#{resource['images:btnCanG.png']}" disabled="#{pageFlowScope.empBean.btnRollDis}">
             <af:setActionListener from="C" to="#{pageFlowScope.empBean.currentBtnValue}"/>
@@ -128,7 +128,7 @@
     </af:gridRow>
   </af:panelGridLayout>
   <af:masonryLayout id="ml1" inlineStyle="background-color:white;"
-                    binding="#{pageFlowScope.empBean.masonaryBindingRef}">
+                    binding="#{pageFlowScope.empBean.massonryLayoutDept}">
     <af:panelGroupLayout id="pgl2">
       <af:panelCollection id="pc1" styleClass="AFStretchWidth">
         <f:facet name="menus"/>
@@ -149,23 +149,27 @@
                   filterModel="#{bindings.DepartmentsVO11Query.queryDescriptor}" filterVisible="true"
                   queryListener="#{bindings.DepartmentsVO11Query.processQuery}" varStatus="vs" id="t5"
                   columnStretching="column:c7">
-          <af:column filterable="true" sortable="true" headerText="Department Id" id="c6">
+          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.DepartmentId.name}" filterable="true"
+                     sortable="true" headerText="Department Id" id="c6">
             <af:outputText value="#{row.DepartmentId}"
                            shortDesc="#{bindings.DepartmentsVO11.hints.DepartmentId.tooltip}" id="ot6">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO11.hints.DepartmentId.format}"/>
             </af:outputText>
           </af:column>
-          <af:column filterable="true" sortable="true" headerText="Department Name" id="c7">
+          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.DepartmentName.name}" filterable="true"
+                     sortable="true" headerText="Department Name" id="c7">
             <af:outputText value="#{row.DepartmentName}"
                            shortDesc="#{bindings.DepartmentsVO11.hints.DepartmentName.tooltip}" id="ot7"/>
           </af:column>
-          <af:column filterable="true" sortable="true" headerText="Manager Id" id="c8">
+          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.ManagerId.name}" filterable="true" sortable="true"
+                     headerText="Manager Id" id="c8">
             <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsVO11.hints.ManagerId.tooltip}"
                            id="ot8">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO11.hints.ManagerId.format}"/>
             </af:outputText>
           </af:column>
-          <af:column filterable="true" sortable="true" headerText="Location Id" id="c9">
+          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.LocationId.name}" filterable="true" sortable="true"
+                     headerText="Location Id" id="c9">
             <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsVO11.hints.LocationId.tooltip}"
                            id="ot9">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO11.hints.LocationId.format}"/>
@@ -173,7 +177,8 @@
           </af:column>
           <af:column id="c5">
             <af:toolbar id="t3">
-              <af:button id="b7" hoverIcon="#{resource['images:btneditblue16.png']}"
+              <af:button id="b7"
+                         hoverIcon="#{resource['images:btneditblue16.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
                          disabled="#{pageFlowScope.empBean.btnTabEditDis}"
                          actionListener="#{pageFlowScope.empBean.EditActionListener}"

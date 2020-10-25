@@ -41,6 +41,31 @@
       <managed-bean-class>view.empButton.EmpEditDiasableButton</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__14">
+      <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
+      <managed-bean-class>SCM_JR_CUST45_Main_Bean.SCM_JR_CUST45_Main_Bean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__15">
+      <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
+      <managed-bean-class>view.SCM_JR_CUST45_Main_Bean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__16">
+      <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
+      <managed-bean-class>view.SCM_JR_CUST45_Main_Bean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__17">
+      <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
+      <managed-bean-class>SCM_JR_CUST45_Main_Bean.SCM_JR_CUST45_Main_Bean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__18">
+      <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
+      <managed-bean-class>SCM_JR_CUST45_Main_Bean.SCM_JR_CUST45_Main_Bean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <managed-bean id="__19">
       <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
       <managed-bean-class>view.SCM_JR_CUST45_Main_Bean</managed-bean-class>
