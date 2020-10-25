@@ -42,7 +42,7 @@
     </af:dialog>
   </af:popup>
   <af:popup childCreation="deferred" autoCancel="disabled" id="padddept"
-            popupFetchListener="#{pageFlowScope.empBean.onCreateNewEmp}"
+            popupFetchListener="#{pageFlowScope.deptBean.onCreateNewEmp}"
             binding="#{pageFlowScope.empBean.mainHeaderPopup}">
     <af:dialog id="d1" title="Department Details" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
@@ -149,27 +149,23 @@
                   filterModel="#{bindings.DepartmentsVO11Query.queryDescriptor}" filterVisible="true"
                   queryListener="#{bindings.DepartmentsVO11Query.processQuery}" varStatus="vs" id="t5"
                   columnStretching="column:c7">
-          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.DepartmentId.name}" filterable="true"
-                     sortable="true" headerText="Department Id" id="c6">
+          <af:column filterable="true" sortable="true" headerText="Department Id" id="c6">
             <af:outputText value="#{row.DepartmentId}"
                            shortDesc="#{bindings.DepartmentsVO11.hints.DepartmentId.tooltip}" id="ot6">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO11.hints.DepartmentId.format}"/>
             </af:outputText>
           </af:column>
-          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.DepartmentName.name}" filterable="true"
-                     sortable="true" headerText="Department Name" id="c7">
+          <af:column filterable="true" sortable="true" headerText="Department Name" id="c7">
             <af:outputText value="#{row.DepartmentName}"
                            shortDesc="#{bindings.DepartmentsVO11.hints.DepartmentName.tooltip}" id="ot7"/>
           </af:column>
-          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.ManagerId.name}" filterable="true" sortable="true"
-                     headerText="Manager Id" id="c8">
+          <af:column filterable="true" sortable="true" headerText="Manager Id" id="c8">
             <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsVO11.hints.ManagerId.tooltip}"
                            id="ot8">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO11.hints.ManagerId.format}"/>
             </af:outputText>
           </af:column>
-          <af:column sortProperty="#{bindings.DepartmentsVO11.hints.LocationId.name}" filterable="true" sortable="true"
-                     headerText="Location Id" id="c9">
+          <af:column filterable="true" sortable="true" headerText="Location Id" id="c9">
             <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsVO11.hints.LocationId.tooltip}"
                            id="ot9">
               <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsVO11.hints.LocationId.format}"/>
@@ -177,8 +173,7 @@
           </af:column>
           <af:column id="c5">
             <af:toolbar id="t3">
-              <af:button id="b7"
-                         hoverIcon="#{resource['images:btneditblue16.png']}"
+              <af:button id="b7" hoverIcon="#{resource['images:btneditblue16.png']}"
                          disabledIcon="#{resource['images:btneditgrey.png']}"
                          disabled="#{pageFlowScope.empBean.btnTabEditDis}"
                          actionListener="#{pageFlowScope.empBean.EditActionListener}"

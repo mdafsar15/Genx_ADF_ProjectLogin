@@ -31,7 +31,8 @@
                      icon="#{resource['images:employee (1).png']}"
                      actionListener="#{pageFlowScope.empBean.firstEmpMethod}"/>
           <af:button text="Department" id="b2" action="dept" styleClass="gofBtn"
-                     icon="#{resource['images:employee (1).png']}" inlineStyle="font-size:34px;"/>
+                     icon="#{resource['images:employee (1).png']}" inlineStyle="font-size:34px;"
+                     actionListener="#{pageFlowScope.empBean.firstEmpMethod}"/>
         </af:toolbar>
       </af:gridCell>
       <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc4"/>
