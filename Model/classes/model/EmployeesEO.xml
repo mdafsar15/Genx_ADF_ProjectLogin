@@ -10,7 +10,8 @@
   DBObjectName="EMPLOYEES"
   AliasName="EmployeesEO"
   BindingStyle="OracleName"
-  RowClass="model.EmployeesEOImpl">
+  RowClass="model.EmployeesEOImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -267,4 +268,8 @@
       <Item Value="model.EmployeesEO.ManagerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

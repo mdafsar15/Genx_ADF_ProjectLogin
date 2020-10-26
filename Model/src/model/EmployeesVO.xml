@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <ViewAccessor
     Name="EmployeesVO1"
     ViewObjectName="model.EmployeesVO"
@@ -187,4 +188,8 @@
     ViewLink="model.DeptMgrFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
