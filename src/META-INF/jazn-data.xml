@@ -6,7 +6,7 @@
             <name>jazn.com</name>
             <users>
                 <user>
-                    <name>genx</name>
+                    <name>Afsar</name>
                     <credentials>{903}Kd+7xNzklYnU6Z3Mwasgj7jGrDUPjLNhVmFkCDCoBio=</credentials>
                     <display-name>Genx</display-name>
                     <description>Genx Project</description>
@@ -26,7 +26,7 @@
                         <members>
                             <member>
                                 <class>oracle.security.jps.internal.core.principals.JpsXmlUserImpl</class>
-                                <name>genx</name>
+                                <name>Afsar</name>
                             </member>
                         </members>
                     </app-role>

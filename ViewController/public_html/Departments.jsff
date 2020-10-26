@@ -4,7 +4,7 @@
   <af:popup childCreation="deferred" autoCancel="disabled" id="peditdept" contentDelivery="lazyUncached">
     <af:dialog id="d2" title="Edit Department" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
-      <af:panelFormLayout id="pfl2">
+      <af:panelFormLayout id="pfl2" labelAlignment="top">
         <af:inputText value="#{bindings.DepartmentId.inputValue}" label="Department Id" disabled="true"
                       required="#{bindings.DepartmentId.hints.mandatory}"
                       columns="#{bindings.DepartmentId.hints.displayWidth}"
@@ -46,7 +46,7 @@
             binding="#{pageFlowScope.empBean.mainHeaderPopupDept}">
     <af:dialog id="d1" title="Department Details" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
-      <af:panelFormLayout id="pfl1">
+      <af:panelFormLayout id="pfl1" labelAlignment="top">
         <af:inputText value="#{bindings.DepartmentId.inputValue}" label="Department Id" disabled="true"
                       required="#{bindings.DepartmentId.hints.mandatory}"
                       columns="#{bindings.DepartmentId.hints.displayWidth}"
@@ -84,8 +84,12 @@
       </af:panelFormLayout>
     </af:dialog>
   </af:popup>
-  <af:popup childCreation="deferred" autoCancel="disabled" id="psuccess">
-    <h:outputText value="Data Inserted Successfully" id="ot5" style="font-size:x-large;"/>
+  <af:popup childCreation="deferred" autoCancel="disabled" id="psuccess"
+            binding="#{pageFlowScope.empBean.popupsuccessDept}">
+    <af:dialog id="d3" type="none">
+      <f:facet name="buttonBar"/>
+      <h:outputText value="Data Inserted Successfully !!!" id="ot5" style="font-size:x-large;color: green;"/>
+    </af:dialog>
   </af:popup>
   <af:panelGridLayout id="pgl1" inlineStyle="background-color:white;">
     <af:gridRow marginTop="5px" height="auto" id="gr1">

@@ -36,6 +36,8 @@ public class Employee {
     private RichGridCell mainPanelDept;
     private RichToolbar toolBarBindingDept;
     private RichPopup mainHeaderPopupDept;
+    private RichPopup popupsuccessDept;
+    private RichPopup popupSuccessEmp;
 
     public Employee() {
         super();
@@ -442,6 +444,7 @@ public class Employee {
     public void save(ActionEvent actionEvent) {
         // Add event code here...
         btnEnableDisable();
+        JSFUtils.showPopup(popupSuccessEmp, null);
         CommonHelper.findOperation("Commit").execute();
         CommonHelper.refreshLayout(masonaryBindingRef);
         CommonHelper.refreshLayout(toolBarBinding);
@@ -479,6 +482,7 @@ public class Employee {
     public void saveDept(ActionEvent actionEvent) {
         // Add event code here...
         btnEnableDisable();
+        JSFUtils.showPopup(popupsuccessDept, null);
         CommonHelper.findOperation("Commit").execute();
         CommonHelper.refreshLayout(massonryLayoutDept);
         CommonHelper.refreshLayout(toolBarBindingDept);
@@ -578,5 +582,20 @@ disableAll();
         return mainHeaderPopupDept;
     }
 
- 
+
+    public void setPopupsuccessDept(RichPopup popupsuccessDept) {
+        this.popupsuccessDept = popupsuccessDept;
+    }
+
+    public RichPopup getPopupsuccessDept() {
+        return popupsuccessDept;
+    }
+
+    public void setPopupSuccessEmp(RichPopup popupSuccessEmp) {
+        this.popupSuccessEmp = popupSuccessEmp;
+    }
+
+    public RichPopup getPopupSuccessEmp() {
+        return popupSuccessEmp;
+    }
 }

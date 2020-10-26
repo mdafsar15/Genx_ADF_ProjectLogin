@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelGridLayout id="pgl3">
+  <af:panelGridLayout id="pgl3" inlineStyle="background-image: url('HKoPzd.jpg')">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="90%" id="gc1">
         <af:toolbar id="t1" inlineStyle="font-size:medium;">
@@ -22,8 +22,8 @@
         <af:panelGroupLayout id="pgl2">
           <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo"  id="i1" />
         </af:panelGroupLayout>
-        <af:outputText value="#{'Welcome,&#160;'}" id="ot1" inlineStyle="font-size:60px;padding-left:194px; color:#0000A0;"/>
-        <af:outputText value="#{securityContext.userName}" id="ot3" inlineStyle="font-size:54px; color:#E41B17;"/>
+        <af:outputText value="#{'Welcome,&#160;'}" id="ot1" inlineStyle="font-size:60px;padding-left:183px; color:#0000A0;"/>
+        <af:outputText value="#{securityContext.userName}" id="ot3" inlineStyle="font-size:54px; color:#E41B17;font-family: cursive;"/>
       </af:gridCell>
       <af:gridCell id="gc9">
         <af:toolbar id="t2" inlineStyle="font-size:xx-large;">
@@ -39,4 +39,5 @@
   </af:panelGridLayout>
   <af:outputText value="GenX specializes in enterprise application integration, security, and business optimization. We have expertise in cloud based or on-premise implementation of SOA based solutions, API gateways, micro services based architecture and blockchain platforms.  With strong understanding of identity and access management, threat detection, prevention management, and asset performance monitoring areas, our security solutions are a perfect fit for growing business needs.  Our Optimization teams have expertise in Digitalization, BI tools, AI/ML based analytical engines as well as business process management (BPM) and dashboard builders to ensure implementation of processes based analytical dashboards.  Artificial Intelligence/ Machine Learning... Blockchain..."
                  id="ot2" styleClass="myCustomBox" inlineStyle="font-size:large; color:#A52A2A;vertical-align: super;" rendered="false"/>
+  <af:image source="#{resource['images:HKoPzd.jpg']}" shortDesc="Genx" id="i2"/>
 </jsp:root>
