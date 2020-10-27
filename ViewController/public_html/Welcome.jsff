@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
           xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelGridLayout id="pgl3">
+  <af:panelGridLayout id="pgl3"
+                      inlineStyle="background-color:white;">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
-      <af:gridCell marginStart="5px" width="90%" id="gc1">
+      <af:gridCell marginStart="5px" width="auto" id="gc1">
         <af:toolbar id="t1" inlineStyle="font-size:medium;">
           <!--<af:link text="LogOut" id="gl1" destination="{/adfAuthentication?logout=true&amp;end_url=/login.html}"
                  inlineStyle="font-size:x-large;"/>-->
         </af:toolbar>
         <af:image source="#{resource['images:logo.png']}" shortDesc="My Company Logo" id="i1"
-                  inlineStyle="width:147px;margin-left: 550px;"/>
+                  inlineStyle="width:129px; margin-left:550px; margin-bottom:-6px; height:46px;"/>
         <af:outputText value="#{'Welcome,&#160;'}" id="ot1"
                        inlineStyle="font-size: 30px;padding-left: 25px;color:#0000A0;padding-bottom: 14px;"/>
         <af:outputText value="#{securityContext.userName}" id="ot3"
@@ -17,7 +18,7 @@
       </af:gridCell>
       <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc2">
         <af:goLink text="LogOut" destination="adfAuthentication?logout=true&amp;end_url=/faces/login.html"
-                   inlineStyle="color:Red; font-size:36px; font-weight:bold; margin-left: 161px;" id="gl1"/>
+                   inlineStyle="color:Red; font-size:25px; font-weight:bold; margin-left: 576px;" id="gl1"/>
         <!--<af:goLink text="LogOut"
                 destination="adfAuthentication?logout=true&amp;end_url=/faces/login.html"
                 inlineStyle="color:Red; font-size:40px; font-weight:bold;"/>-->
@@ -25,22 +26,28 @@
     </af:gridRow>
     <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
       <af:gridCell marginStart="5px" width="90%" id="gc3"/>
-      <af:gridCell id="gc9">
-        <af:toolbar id="t2" inlineStyle="font-size:xx-large;">
-          <af:button text="Employee" id="b1" action="emp" styleClass="gofBtn" inlineStyle="font-size:34px;"
-                     icon="#{resource['images:employee (1).png']}"
-                     actionListener="#{pageFlowScope.empBean.firstEmpMethod}"/>
-          <af:button text="Department" id="b2" action="dept" styleClass="gofBtn"
-                     icon="#{resource['images:employee (1).png']}" inlineStyle="font-size:34px;"/>
-        </af:toolbar>
-      </af:gridCell>
+      <af:gridCell id="gc9"/>
       <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc4"/>
     </af:gridRow>
   </af:panelGridLayout>
-  <af:panelStretchLayout id="psl1">
+  <af:panelStretchLayout id="psl1" topHeight="650px" startWidth="900px" bottomHeight="500px"
+                         inlineStyle="width:1582px; background-color:white;  background-repeat:no-repeat; background-size:cover;"
+                         endWidth="500px">
     <f:facet name="start"/>
     <f:facet name="end"/>
-    <f:facet name="top"/>
+    <f:facet name="top">
+      <af:toolbar id="t2" inlineStyle="font-size:xx-large;
+    padding-left: 131px;
+    padding-top: 52px;">
+        <af:button text="Employee" id="b1" action="emp" styleClass="gofBtn" inlineStyle="font-size:84px;
+    padding-left: 11px;
+    padding-bottom: 0px;background: #4285f4;
+"
+                   actionListener="#{pageFlowScope.empBean.firstEmpMethod}" icon="#{resource['images:group-64.png']}"/>
+        <af:button text="Department" id="b2" action="dept" styleClass="gofBtn" inlineStyle="font-size:34px;padding-left: 7px;
+    padding-bottom: 0px;background: #4285f4;" icon="#{resource['images:group-64.png']}"/>
+      </af:toolbar>
+    </f:facet>
     <f:facet name="bottom"/>
     <f:facet name="center"/>
   </af:panelStretchLayout>
