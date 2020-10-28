@@ -3,7 +3,7 @@
                 Package="view.pageDefs">
   <parameters/>
   <executables>
-    <iterator Binds="EmployeesVO1" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesVO1Iterator"/>
+    <iterator Binds="EmployeesVO1" RangeSize="4" DataControl="AppModuleDataControl" id="EmployeesVO1Iterator"/>
     <searchRegion Binds="EmployeesVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmployeesVO11Query"/>
   </executables>
