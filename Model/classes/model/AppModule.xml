@@ -6,7 +6,12 @@
   Name="AppModule"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  ComponentClass="model.AppModuleImpl"
+  ComponentInterface="model.common.AppModule">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewUsage
     Name="DepartmentsVO1"
     ViewObjectName="model.DepartmentsVO"/>
@@ -43,4 +48,14 @@
     SrcViewUsageName="model.AppModule.EmployeesVO1"
     DstViewUsageName="model.AppModule.DepartmentsVO2"
     Reversed="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="create"
+      MethodName="create">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientInterface>
 </AppModule>

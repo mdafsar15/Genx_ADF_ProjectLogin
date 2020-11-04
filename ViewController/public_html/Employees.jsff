@@ -193,7 +193,7 @@
       </af:panelFormLayout>
     </af:dialog>
   </af:popup>
-  <af:panelGridLayout id="pgl1" inlineStyle="background-color:white;">
+  <af:panelGridLayout id="pgl1" inlineStyle="background-color:White;">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="50%" id="gc1"/>
       <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2" binding="#{pageFlowScope.empBean.mainPannel}">
@@ -228,6 +228,10 @@
                      icon="#{resource['images:home16.png']}"/>
         </af:toolbar>
       </af:gridCell>
+    </af:gridRow>
+    <af:gridRow id="gr2">
+      <af:gridCell id="gc3"/>
+      <af:gridCell id="gc4"/>
     </af:gridRow>
   </af:panelGridLayout>
   <af:masonryLayout id="ml1" inlineStyle="background-color:white;"

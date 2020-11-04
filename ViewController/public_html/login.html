@@ -1,56 +1,38 @@
-<html 
->
-  <head>
-  <META http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  
-    <title>Sample Login</title>
-    <style>
-body  {
-  background-image: url("HKoPzd.jpg");
-  
-}
-</style>
-  </head>
-  <body><form method="POST" action="j_security_check">
-      <img src="logo.png" height="105" width="243" />
-    
-      <table cellspacing="2" cellpadding="3" border="1" style="
-    margin-top: 125px;
-    margin-left: 598px;
-">
-
-        <tr>
-          <th>
-            Username:
-          </th>
-          <td>
-            <input type="text" name="j_username" />
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Password:
-          </th>
-          <td>
-            <input type="password" name="j_password" />
-          </td>
-        </tr>
-      </table>
-      <p>
-        <input type="submit" name="submit" value="Submit" style="
-    margin-left: 616px;
-    color: white;
-    background-color: darkblue;
-     font-size: larger;
-"/>
-  <a class="button" href="ChangePass.html" style="
-    margin-left: 20px;
-">Forgot Password</a>
-       
-      </p>
-      <p>
-        &nbsp;
-      </p>
-    </form>
-  </body>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Sample Login</title>
+        <style>
+            body {
+                background-image: url("HKoPzd.jpg");
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST" action="j_security_check">
+            <img src="logo.png" height="105" width="243"/>
+            <table cellspacing="2" cellpadding="3" border="1" style="     margin-top: 125px;     margin-left: 598px; ">
+                <tr>
+                    <th>Username:</th>
+                    <td>
+                        <input type="text" name="j_username"/>
+                    </td>
+                </tr>
+                 
+                <tr>
+                    <th>Password:</th>
+                    <td>
+                        <input type="password" name="j_password"/>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" name="submit" value="Submit"
+                       style="     margin-left: 616px;     color: white;     background-color: darkblue;      font-size: larger; "/>
+                 
+                <a class="button" href="ChangePass.html" style="     margin-left: 20px; ">Forgot Password</a>
+            </p>
+            <p>&nbsp;</p>
+        </form>
+    </body>
 </html>

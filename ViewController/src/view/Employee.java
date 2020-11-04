@@ -13,8 +13,11 @@ import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.layout.RichGridCell;
 import oracle.adf.view.rich.component.rich.layout.RichMasonryLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelSpringboard;
 import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
+import oracle.adf.view.rich.component.rich.output.RichPanelCollection;
 import oracle.adf.view.rich.context.AdfFacesContext;
 import oracle.adf.view.rich.event.DialogEvent;
 import oracle.adf.view.rich.event.PopupFetchEvent;
@@ -38,6 +41,10 @@ public class Employee {
     private RichPopup mainHeaderPopupDept;
     private RichPopup popupsuccessDept;
     private RichPopup popupSuccessEmp;
+    private RichPanelCollection panelBinding;
+    private RichToolbar toolBarDeptBinding;
+    private RichPanelSpringboard springBinding;
+    private RichPanelGroupLayout panelGroupDeptBinding;
 
     public Employee() {
         super();
@@ -427,18 +434,21 @@ public class Employee {
         JSFUtils.showPopup(mainHeaderPopup, null);
         CommonHelper.refreshLayout(masonaryBindingRef);
         CommonHelper.refreshLayout(toolBarBinding);
+//        CommonHelper.refreshLayout(mainPannel);
     }
     
     public void btnEditActionListener(ActionEvent actionEvent) {
                     btnEnableDisable();
                     CommonHelper.refreshLayout(masonaryBindingRef);
                     CommonHelper.refreshLayout(toolBarBinding);
+            CommonHelper.refreshLayout(mainPannel);
         }
 
         public void EditActionListener(ActionEvent actionEvent) {
     //        JSFUtils.showPopup(itemPopupBinding, null);
                     CommonHelper.refreshLayout(masonaryBindingRef);
                         CommonHelper.refreshLayout(toolBarBinding);
+//            CommonHelper.refreshLayout(mainPannel);
         }
 
     public void save(ActionEvent actionEvent) {
@@ -448,6 +458,7 @@ public class Employee {
         CommonHelper.findOperation("Commit").execute();
         CommonHelper.refreshLayout(masonaryBindingRef);
         CommonHelper.refreshLayout(toolBarBinding);
+//        CommonHelper.refreshLayout(mainPannel);
     }
 
     public void cancel(ActionEvent actionEvent) {
@@ -456,7 +467,7 @@ public class Employee {
         CommonHelper.findOperation("Rollback").execute();
         CommonHelper.refreshLayout(masonaryBindingRef);
         CommonHelper.refreshLayout(toolBarBinding);
-        CommonHelper.refreshLayout(    mainPannel);
+//        CommonHelper.refreshLayout(    mainPannel);
 
     }
 
@@ -470,6 +481,8 @@ public class Employee {
         JSFUtils.showPopup(mainHeaderPopupDept, null);
         CommonHelper.refreshLayout(massonryLayoutDept);
         CommonHelper.refreshLayout(toolBarBindingDept);
+        CommonHelper.refreshLayout(mainPannel);
+        
     }
 
     public void editDept(ActionEvent actionEvent) {
@@ -477,15 +490,17 @@ public class Employee {
         btnEnableDisable();
         CommonHelper.refreshLayout(massonryLayoutDept);
         CommonHelper.refreshLayout(toolBarBindingDept);
+    
     }
 
     public void saveDept(ActionEvent actionEvent) {
         // Add event code here...
         btnEnableDisable();
-        JSFUtils.showPopup(popupsuccessDept, null);
+//        JSFUtils.showPopup(popupsuccessDept, null);
         CommonHelper.findOperation("Commit").execute();
         CommonHelper.refreshLayout(massonryLayoutDept);
         CommonHelper.refreshLayout(toolBarBindingDept);
+        CommonHelper.refreshLayout(mainPannel);
     }
 
     public void cancelDept(ActionEvent actionEvent) {
@@ -494,6 +509,7 @@ public class Employee {
           CommonHelper.findOperation("Rollback").execute();
           CommonHelper.refreshLayout(massonryLayoutDept);
           CommonHelper.refreshLayout(toolBarBindingDept);
+        CommonHelper.refreshLayout(mainPannel);
     }
     
     
@@ -597,5 +613,45 @@ disableAll();
 
     public RichPopup getPopupSuccessEmp() {
         return popupSuccessEmp;
+    }
+
+    public void setPanelBinding(RichPanelCollection panelBinding) {
+        this.panelBinding = panelBinding;
+    }
+
+    public RichPanelCollection getPanelBinding() {
+        return panelBinding;
+    }
+
+    public void setToolBarDeptBinding(RichToolbar toolBarDeptBinding) {
+        this.toolBarDeptBinding = toolBarDeptBinding;
+    }
+
+    public RichToolbar getToolBarDeptBinding() {
+        return toolBarDeptBinding;
+    }
+
+    public void editDeptDetailsButton(ActionEvent actionEvent) {
+        // Add event code here...
+        btnEnableDisable();
+        CommonHelper.refreshLayout(panelBinding);
+        CommonHelper.refreshLayout(springBinding);
+        CommonHelper.refreshLayout(toolBarDeptBinding);
+    }
+
+    public void setSpringBinding(RichPanelSpringboard springBinding) {
+        this.springBinding = springBinding;
+    }
+
+    public RichPanelSpringboard getSpringBinding() {
+        return springBinding;
+    }
+
+    public void setPanelGroupDeptBinding(RichPanelGroupLayout panelGroupDeptBinding) {
+        this.panelGroupDeptBinding = panelGroupDeptBinding;
+    }
+
+    public RichPanelGroupLayout getPanelGroupDeptBinding() {
+        return panelGroupDeptBinding;
     }
 }

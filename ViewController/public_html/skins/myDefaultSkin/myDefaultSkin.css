@@ -254,3 +254,712 @@ background-color: White;
 
 af|panelCollection {
 }
+
+@charset "UTF-8";
+
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.AFDefaultFont:alias, body {
+    src: url('../Font/Calibri.ttf')format(true);
+    /*-tr-inhibit:font-family;*/
+
+    font-family: Calibri !important;
+    font-size: 13px;
+}
+af|panelSpringboard.gofpsbWhite {
+    background-color: #FFFFFF;
+    border: 0px;
+}
+af|panelSpringboard.gofpsbWhite::body {
+    background-color: #FFFFFF;
+    border: 0px;
+}
+af|panelSpringboard.gofpsbWhite::item-text:selected, af|panelSpringboard.gofpsbWhite::item-text:hover, af|panelSpringboard.gofpsbWhite::item-text {
+    color: #656565;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+af|panelSpringboard.gofpsbWhite::item:selected {
+height: 100px;
+    width: 100px;
+    border: 0px;
+    background-color: #efefef;
+}
+
+af|panelSpringboard.gofpsbWhite::item {
+    height: 100px;
+    width: 100px;
+    border: 0px;
+    background-color: #FFFFFF;
+}
+AF|outputText {
+    font-family: Calibri;
+}
+
+af|dialog.gofdialog af|button {
+    background-color: #3399cc;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-weight: normal;
+    background-image: none;
+    width: 80px;
+    font-size: 15px;
+    border: White 0px none !important;
+    border-radius: 3px !important;
+}
+
+af|dialog.gofdialog af|button::link {
+    background-color: #3399cc;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-weight: normal;
+    background-image: none;
+    font-size: 15px;
+    border: White 0px none !important;
+    border-radius: 3px !important;
+}
+
+af|button.gofBtn, af|button.gofBtn::link, af|button.gofBtn:hover, af|button.gofBtn:hover::link {
+    background-color: #3399cc;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-size: 15px;
+    font-weight: normal;
+    background-image: none;
+    border: White 0px none !important;
+    border-radius: 3px !important;
+}
+
+af|inputListOfValues, af|inputComboboxListOfValues {
+    -tr-stretch-search-dialog: true;
+}
+
+af|inputListOfValues::dialog af|dialog::content-center, af|inputComboboxListOfValues::dialog af|dialog::content-center {
+    min-width: 400px;
+    min-height: 460px;
+}
+
+af|inputListOfValues::dialog af|dialog::content-center af|query::title0, af|inputListOfValues::dialog af|dialog::content-center af|query::title1, af|inputListOfValues::dialog af|dialog::content-center af|query::title2, af|inputListOfValues::dialog af|dialog::content-center af|query::title3, af|inputListOfValues::dialog af|dialog::content-center af|query::title4, af|inputListOfValues::dialog af|dialog::content-center af|query::title5, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title0, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title1, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title2, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title3, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title4, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::title5 {
+    visibility: hidden;
+    display: none;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+af|inputListOfValues::dialog af|dialog::content-center af|query::info, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::info {
+    display: none;
+    visibility: hidden;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+af|inputListOfValues::dialog af|dialog::content-center af|query::criteria af|selectOneRadio, af|inputComboboxListOfValues::dialog af|dialog::content-center af|query::criteria af|selectOneRadio {
+    display: none;
+    visibility: hidden;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+af|query {
+    margin-top: 0px;
+    padding-top: 0px;
+    -tr-header-height: 0px;
+}
+
+af|button.gofBtn:disabled, af|button.gofBtn:disabled::link {
+    background-color: #8998a3;
+    text-shadow: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Calibri;
+    color: White;
+    font-size: 15px;
+    font-weight: normal;
+    background-image: none;
+    border: White 0px none !important;
+    border-radius: 3px !important;
+}
+
+.gofpgl30 {
+    height: 340px;
+    min-width: 400px;
+    width: 32%;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl25 {
+    height: 295px;
+    width: 24%;
+    min-width: 312px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl70 {
+    height: 340px;
+    width: 65%;
+    min-width: 820px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl50 {
+    height: 340px;
+    width: 48%;
+    min-width: 625px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVertical30 {
+    height: 700px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+af|panelFormLayout::label-stacked-cell {
+    font-family: Calibri;
+}
+
+af|dialog.gofdialog {
+    background-color: White;
+    border-color: #3399cc;
+}
+
+af|dialog.gofdialog::header, af|dialog.gofdialog::header-end, af|dialog.gofdialog::header-start, af|dialog.gofdialog::title {
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #3399cc;
+    background-image: none;
+}
+
+af|inputText::content {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+af|selectOneChoice::content {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+af|inputDate::content {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.gofpglVertical50 {
+    height: 600px;
+    width: 48.5%;
+    min-width: 625px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVertical70 {
+    height: 700px;
+    width: 65%;
+    min-width: 820px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVerticalNew70 {
+    height: 700px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVerticalFull30 {
+    height: 1050px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl100 {
+    height: 950px;
+    width: 95%;
+    min-width: 950px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglSalaryProcessFullVertical30 {
+    height: 700px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgsalaryProcessl70 {
+    height: 340px;
+    width: 65%;
+    min-width: 820px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl30Manpower {
+    height: 340px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl70EmpMaterDataBrowser {
+    height: 700px;
+    width: 65%;
+    min-width: 820px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVertical30EmpMstrDataBrowser {
+    height: 700px;
+    width: 25%;
+    min-width: 340px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl25EmpMstrDatBrowser {
+    height: 340px;
+    width: 24%;
+    min-width: 100px;
+    max-width: 150px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVerticalFullEligbiltyCr30 {
+    height: 700px;
+    width: 32%;
+    min-width: 400px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpgl100 {
+    height: 700px;
+    width: 97%;
+    min-width: 1200px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVertical70EmpMast {
+    height: 716px;
+    width: 65%;
+    min-width: 840px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglHorizontal100 {
+    height: 340px;
+    width: 97%;
+    min-width: 1200px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVerticalCustom70 {
+    height: 600px;
+    width: 65%;
+    min-width: 820px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglCustom30 {
+    height: 600px;
+    min-width: 400px;
+    width: 32%;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofDashItop {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.horizontal50_100 {
+    height: 340px;
+    width: 97%;
+    min-width: 1200px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+af|panelSpringboard.gofpsb {
+    background-color: #005da9;
+    border: 0px;
+}
+af|panelSpringboard.gofpsb::body {
+    background-color: #005da9;
+    border: 0px;
+}
+af|panelSpringboard.gofpsb::item-text:selected, af|panelSpringboard.gofpsb::item-text:hover, af|panelSpringboard.gofpsb::item-text {
+    color: White;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+af|panelSpringboard.gofpsb::item:selected {
+height: 100px;
+    width: 100px;
+    border: 0px;
+    background-color: #0072b1;
+}
+
+af|panelSpringboard.gofpsb::item {
+    height: 100px;
+    width: 100px;
+    border: 0px;
+    background-color: #005da9;
+}
+.gofpglVertical75 {
+    height: 700px;
+    width: 74%;
+    min-width: 850px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+
+.gofpglVertical25 {
+    height: 700px;
+    width: 23%;
+    min-width: 300px;
+    background-color: White;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+}
+.AFMasonryTileSize1x1 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryTileSize1x2 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryTileSize1x3 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryTileSize2x1 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryTileSize2x2 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryTileSize2x3 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryTileSize3x1 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+AFMasonryTileSize3x2 {
+    margin-left: 9px !important;
+    margin-right: 0px !important;
+    margin-top: 9px !important;
+    margin-bottom: 0px !important;
+}
+
+.AFMasonryLayoutTransitionResizeTo {
+    padding-left: 12px !important;
+}
+
+.AFMasonryLayoutTransitionResizeToFast {
+    padding-left: 12px !important;
+}
+
+af|masonryLayout {
+    padding-left: 12px !important;
+}
+
+
+.gofpglLogin{
+    height: 260px;
+    min-width: 220px;
+    width:47%;    
+}
+.gofpglLoginImage{
+    height: 80px;
+    min-width: 78px;
+    width:80px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: 3px;
+    
+}
+.gofpglLoginHorizontal{
+    height: 30px;
+    min-width: 230px;
+    width:98%;
+	
+}
+.gofpgl20{
+    height: 340px;
+    width: 20%;
+    background-color: White;
+    float: left;
+    border: 0;
+}
+
+.gofpgl80_main{
+    height: 340px;
+    width: 80%;
+    background-color: White;
+    float: left;
+    border: 0;
+}
+
+.gofpgl80_child{
+    height: 168px;
+    width: 100%;
+    border: 0;
+}
+
+.gofpgl30vertical{
+    height: 500px;
+    width: 30%;
+    background-color: White;
+    float: left;
+}
+
+.gofpgl70vertical{
+    height: 500px;
+    width: 70%;
+    background-color: White;
+    float: left;
+}
+
+.gofpglbox25{
+    width: 24%;
+    min-width:20%;
+    float: left;
+    height: 165px;
+    margin-left:7px;
+    border:1px solid #eaeaea;
+}
+
+.gofpgl100_header{
+    background-color:white;
+    padding:6px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.gofpb_first{
+    width:210px;
+    height:152px;
+    border:0;
+}
+
+.gofpb_second{
+    width:385px;
+    height:75px;
+    border:0;
+}
+
+.goflistview1{
+    border: 0px;
+    height:165px
+}
+
+.goflistview2{
+    border: 0px;
+    height:450px
+}
+
+.gofpglinlist{
+    width:300px;
+}
+
+af|link.goflink::image{
+    height:86px;
+}
+
+@media (max-width: 992px) {
+    .gofpgl20{
+        float: none;
+        width: 100%;
+        height: 330px;
+    }
+    
+    .gofpgl80_main{
+        float: none;
+        width: 100%;
+        height: auto;
+        min-height: 420px;
+    }
+    
+    .gofpgl80_child{
+        height: auto;
+        width: 100%;
+    }
+    
+    .gofpb_first{
+        width:195px;
+    }
+    
+    .gofpglbox25{
+        width:48%;
+        float:left;
+        height:130px;
+        min-width:48%;
+    }  
+
+    .goflistview1{
+        border: 0px;
+        height:auto;
+    }
+    
+    .gofpgl30vertical{
+        float:none;
+        width:100%;
+        height: auto;
+        padding: 10px 20px;
+    }
+    
+    .gofpgl70vertical{
+        float:none;
+        width:100%;
+    }
+    
+    .goflistview2{
+        height:auto;
+    }
+}

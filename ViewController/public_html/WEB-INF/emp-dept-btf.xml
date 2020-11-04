@@ -26,11 +26,6 @@
       <managed-bean-class>view.Employee</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
-    <managed-bean id="__5">
-      <managed-bean-name>deptBean</managed-bean-name>
-      <managed-bean-class>view.Department</managed-bean-class>
-      <managed-bean-scope>pageFlow</managed-bean-scope>
-    </managed-bean>
     <managed-bean id="__11">
       <managed-bean-name>button</managed-bean-name>
       <managed-bean-class>view.NewButton</managed-bean-class>
@@ -80,6 +75,11 @@
       <managed-bean-name>SCM_JR_CUST45_Main_Bean</managed-bean-name>
       <managed-bean-class>view.SCM_JR_CUST45_Main_Bean</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__25">
+      <managed-bean-name>deptBeanPopup</managed-bean-name>
+      <managed-bean-class>view.Employee</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <view id="Welcome">
       <page>/Welcome.jsff</page>
