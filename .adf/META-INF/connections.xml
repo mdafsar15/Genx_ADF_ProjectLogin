@@ -24,4 +24,111 @@
       </StringRefAddr>
     </RefAddresses>
   </Reference>
+  <Reference name="ReqRes" className="oracle.adf.model.connection.rest.RestConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.rest.RestConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="ReqRes">
+        <Contents>
+          <restconnection name="ReqRes" url="https://reqres.in"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="getEmp" className="oracle.adf.model.connection.rest.RestConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.rest.RestConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="getEmp">
+        <Contents>
+          <restconnection name="getEmp" url="https://run.mocky.io/v3/1923d3e2-698c-4e00-bf47-13aec0df1b5b"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="Calculator" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://www.dneonline.com/calculator.asmx?wsdl"
+                        service="{http://tempuri.org/}Calculator">
+            <model name="{http://tempuri.org/}Calculator" xmlns="http://oracle.com/ws/model">
+              <service name="{http://tempuri.org/}Calculator">
+                <port name="CalculatorSoap" binding="{http://tempuri.org/}CalculatorSoap"
+                      portType="{http://tempuri.org/}CalculatorSoap">
+                  <soap addressUrl="http://www.dneonline.com/calculator.asmx"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="Add">
+                    <soap soapAction="http://tempuri.org/Add" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                  <operation name="Subtract">
+                    <soap soapAction="http://tempuri.org/Subtract" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                  <operation name="Multiply">
+                    <soap soapAction="http://tempuri.org/Multiply" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                  <operation name="Divide">
+                    <soap soapAction="http://tempuri.org/Divide" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+                <port name="CalculatorSoap12" binding="{http://tempuri.org/}CalculatorSoap12"
+                      portType="{http://tempuri.org/}CalculatorSoap">
+                  <soap addressUrl="http://www.dneonline.com/calculator.asmx"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="Add">
+                    <soap soapAction="http://tempuri.org/Add" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                  <operation name="Subtract">
+                    <soap soapAction="http://tempuri.org/Subtract" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                  <operation name="Multiply">
+                    <soap soapAction="http://tempuri.org/Multiply" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                  <operation name="Divide">
+                    <soap soapAction="http://tempuri.org/Divide" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="MockyCreate" className="oracle.adf.model.connection.rest.RestConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.rest.RestConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="MockyCreate">
+        <Contents>
+          <restconnection name="MockyCreate" url="https://reqres.in/"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="updateMocky" className="oracle.adf.model.connection.rest.RestConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.rest.RestConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="updateMocky">
+        <Contents>
+          <restconnection name="updateMocky" url="https://reqres.in/"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
 </References>

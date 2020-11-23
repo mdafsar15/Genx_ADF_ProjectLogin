@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.22.48" id="DataControls"
+                    Package="model">
+  <AdapterDataControl id="getEmp" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.rest.RestURLDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false" Definition="model.getEmp"
+                      BeanClass="model.getEmp" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <Definitions>
+        <Definition xmlns="http://xmlns.oracle.com/adfm/adapter/rest/json" ConnectionName="getEmp" Source="/"
+                    HttpMethod="GET" id="get" MethodRef="JSON" SchemaLocation="getEmp_get_response_schema.json"
+                    ensureKeyAttribute="true" dcStructureVersion="2" RootElement="methodReturn"/>
+      </Definitions>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="Calculator" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="model.Calculator"
+                      BeanClass="model.Calculator" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="Calculator" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  ensureKeyAttribute="true" useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="Calculator" namespace="http://tempuri.org/" connection="Calculator">
+          <port name="CalculatorSoap12">
+            <operation name="Add"/>
+            <operation name="Divide"/>
+            <operation name="Multiply"/>
+            <operation name="Subtract"/>
+          </port>
+          <port name="CalculatorSoap">
+            <operation name="Add"/>
+            <operation name="Divide"/>
+            <operation name="Multiply"/>
+            <operation name="Subtract"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="MockyCreate" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.rest.RestURLDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false" Definition="model.MockyCreate"
+                      BeanClass="model.MockyCreate" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <Definitions>
+        <Definition xmlns="http://xmlns.oracle.com/adfm/adapter/rest/json" ConnectionName="MockyCreate"
+                    Source="api/users" HttpMethod="POST" id="post" MethodRef="JSON"
+                    SchemaLocation="MockyCreate_post_response_schema.json"
+                    InputSchemaLocation="MockyCreate_post_payload_schema.json" ensureKeyAttribute="true"
+                    dcStructureVersion="2" RootElement="methodReturn"/>
+      </Definitions>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="UpdateMocy" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.rest.RestURLDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false" Definition="model.UpdateMocy"
+                      BeanClass="model.UpdateMocy" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <Definitions>
+        <Definition xmlns="http://xmlns.oracle.com/adfm/adapter/rest/json" ConnectionName="updateMocky"
+                    Source="/api/users/2" HttpMethod="PUT" id="update" MethodRef="JSON"
+                    SchemaLocation="UpdateMocy_update_response_schema.json"
+                    InputSchemaLocation="UpdateMocy_update_payload_schema.json" ensureKeyAttribute="true"
+                    dcStructureVersion="2" RootElement="methodReturn"/>
+      </Definitions>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

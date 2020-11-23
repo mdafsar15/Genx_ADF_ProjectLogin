@@ -15,6 +15,7 @@
     <page path="/Search.jsff" usageId="view_SearchPageDef"/>
     <page path="/untitled1.jspx" usageId="view_untitled1PageDef"/>
     <page path="/ChangePass.html" usageId="view_ChangePassPageDef"/>
+    <page path="/Demo.jspx" usageId="view_DemoPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_EmployeePageDef" path="view.pageDefs.EmployeePageDef"/>
@@ -25,8 +26,12 @@
     <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
     <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
     <page id="view_ChangePassPageDef" path="view.pageDefs.ChangePassPageDef"/>
+    <page id="view_DemoPageDef" path="view.pageDefs.DemoPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="UpdateMocy" path="model.UpdateMocy"/>
+    <dc id="MockyCreate" path="model.MockyCreate"/>
+    <dc id="getEmp" path="model.getEmp"/>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"

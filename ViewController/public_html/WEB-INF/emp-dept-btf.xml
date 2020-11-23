@@ -81,6 +81,11 @@
       <managed-bean-class>view.Employee</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>validator</managed-bean-name>
+      <managed-bean-class>view.Index</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="Welcome">
       <page>/Welcome.jsff</page>
     </view>
@@ -89,6 +94,9 @@
     </view>
     <view id="Departments">
       <page>/Departments.jsff</page>
+    </view>
+    <view id="DemoNew">
+      <page>/DemoNew.jsff</page>
     </view>
     <control-flow-rule id="__1">
       <from-activity-id>Welcome</from-activity-id>

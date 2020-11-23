@@ -15,7 +15,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>Welcome&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">211.89648</property>
+         name="y">210.84473</property>
       <property
          name="page">/Welcome.jsff</property>
       <property
@@ -63,7 +63,7 @@
       <property
          name="fromOutcome">dept</property>
       <property
-         name="sdm:polyPoints">R54,140.42252,215.0459,327.0,294.74707,L46</property>
+         name="sdm:polyPoints">R54,140.43404,214.34473,327.0,294.74707,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -73,7 +73,7 @@
       <property
          name="fromOutcome">returnEmp</property>
       <property
-         name="sdm:polyPoints">L46,320.5382,121.44824,139.0,201.0459,R38</property>
+         name="sdm:polyPoints">L46,320.55005,121.44824,139.0,200.34473,R38</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -83,7 +83,7 @@
       <property
          name="fromOutcome">returnDept</property>
       <property
-         name="sdm:polyPoints">L54,325.57248,301.74707,139.0,222.0459,R62</property>
+         name="sdm:polyPoints">L54,325.5609,301.74707,139.0,221.34473,R62</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -117,6 +117,23 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R46,140.45645,208.0459,322.0,128.44824,L54</property>
+         name="sdm:polyPoints">R46,140.44467,207.34473,322.0,128.44824,L54</property>
    </ControlFlowCase>
+   <View
+      id="View13">
+      <property
+         name="activityId">DemoNew</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">634.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>DemoNew&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">235.29883</property>
+      <property
+         name="page">/DemoNew.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>
