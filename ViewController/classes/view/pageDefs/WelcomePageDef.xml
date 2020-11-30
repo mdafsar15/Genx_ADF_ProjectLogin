@@ -28,6 +28,10 @@
                       id="update_paramIterator"/>
     <methodIterator Binds="update.result" DataControl="UpdateMocy" RangeSize="25"
                     BeanClass="model.UpdateMocy.update_Data_methodReturn" id="updateIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="EmployeesVO1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="DepartmentsVO1Iterator" id="ImplicitViewCriteriaQuery1"/>
   </executables>
   <bindings>
     <tree IterBinding="EmployeesVO1Iterator" id="EmployeesVO1">

@@ -11,23 +11,23 @@
           <af:spacer id="s3" width="550"/>
           <af:link text="Home" id="l4" inlineStyle="color:White;     font-size: 19px; "
                    actionListener="#{pageFlowScope.empBean.homeRef}">
-            <af:spacer id="s5" width="20"/>
             <af:setActionListener from="P" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:link>
+          <af:spacer id="s5" width="20"/>
           <af:link text="Employees" id="l1" inlineStyle="color:White;      font-size: 19px; " actionListener="#{pageFlowScope.empBean.empRef}">
-            <af:spacer id="s1" width="20"/>
             <af:setActionListener from="N" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:link>
+          <af:spacer id="s1" width="20"/>
           <af:link text="Departments" id="l2" inlineStyle="color:White;     font-size: 19px; "
                    actionListener="#{pageFlowScope.empBean.deptRef}">
-            <af:spacer id="s2" width="20"/>
             <af:setActionListener from="M" to="#{pageFlowScope.empBean.currentBtnValue}"/>
           </af:link>
+          <af:spacer id="s2" width="20"/>
           <af:link text="Integration" id="l3" inlineStyle="color:White;     font-size: 19px; "
                    actionListener="#{pageFlowScope.empBean.restSoapRef}">
             <af:setActionListener from="O" to="#{pageFlowScope.empBean.currentBtnValue}"/>
-            <af:spacer id="s6" width="400"/>
           </af:link>
+          <af:spacer id="s6" width="540"/>
           <af:goLink text="Logout"
                 destination="adfAuthentication?logout=true&amp;end_url=/faces/login.html"
                 inlineStyle="color:white; font-size:32px; "/>
@@ -39,6 +39,20 @@
       <af:panelGroupLayout id="pgl6">
         <af:panelGroupLayout id="pgl3" rendered="#{pageFlowScope.empBean.btnEmpDis}"
                              inlineStyle="background-color: white;">
+          <af:toolbar id="t19" inlineStyle="  padding-left: 592px;     background-color: white;padding-top: 33px;">
+            <af:panelGroupLayout id="pgl10">
+              <af:panelHeader text="Search Employees" id="ph1">
+                <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                               value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                               model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                               queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                  <f:facet name="end">
+                    <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                  </f:facet>
+                </af:quickQuery>
+              </af:panelHeader>
+            </af:panelGroupLayout>
+          </af:toolbar>
           <af:toolbar id="t6" binding="#{pageFlowScope.empBean.toolBarBinding}"
                       inlineStyle="background-color: white;padding-bottom: 589px;margin-bottom: -559px;padding-left: 89px;padding-top: 29px;">
             <af:spacer id="s4" width="512"/>
@@ -185,13 +199,27 @@
               </af:panelCollection>
             </af:panelGroupLayout>
           </af:masonryLayout>
-          <af:toolbar id="t14" inlineStyle="background-color:Blue;  margin-top: 261px;">
+          <af:toolbar id="t14" inlineStyle="background-color:Blue;  margin-top: 158px;">
             <af:outputText value="&#169; Copyright 2019 - GenX Info Technologies Pvt. Ltd., A Microsoft and Oracle Partner Organization. An ISO 9001:2015 certified organization" id="ot27"
                            inlineStyle="color:White;margin-left: 389px;"/>
           </af:toolbar>
         </af:panelGroupLayout>
         <af:panelGroupLayout id="pgl7" rendered="#{pageFlowScope.empBean.btnDeptDis}"
                              inlineStyle="background-color: white;">
+          <af:toolbar id="t20" inlineStyle="  padding-left: 592px;     background-color: white;padding-top: 33px;">
+            <af:panelGroupLayout layout="vertical" id="pgl12">
+              <af:panelHeader text="Search Departments" id="ph2">
+                <af:quickQuery label="Search" searchDesc="Search" id="qryId2"
+                               value="#{bindings.ImplicitViewCriteriaQuery1.quickQueryDescriptor}"
+                               model="#{bindings.ImplicitViewCriteriaQuery1.queryModel}"
+                               queryListener="#{bindings.ImplicitViewCriteriaQuery1.processQuery}">
+                  <f:facet name="end">
+                    <af:commandLink text="Advanced" rendered="false" id="cl2"/>
+                  </f:facet>
+                </af:quickQuery>
+              </af:panelHeader>
+            </af:panelGroupLayout>
+          </af:toolbar>
           <af:toolbar id="t5"
                       binding="#{pageFlowScope.empBean.toolBarBindingDept}"
                       inlineStyle="background-color: white;padding-bottom: 589px;margin-bottom: -559px;padding-left: 89px;padding-top: 29px;">
@@ -290,7 +318,7 @@
               </af:panelCollection>
             </af:panelGroupLayout>
           </af:masonryLayout>
-          <af:toolbar id="t15" inlineStyle="background-color:Blue;  margin-top: 261px;">
+          <af:toolbar id="t15" inlineStyle="background-color:Blue;  margin-top: 158px;">
             <af:outputText value="&#169; Copyright 2019 - GenX Info Technologies Pvt. Ltd., A Microsoft and Oracle Partner Organization. An ISO 9001:2015 certified organization" id="ot28"
                            inlineStyle="color:White;margin-left: 389px;"/>
           </af:toolbar>
@@ -324,17 +352,17 @@
                 <af:spacer id="s8" width="30"/>
                 <af:button text="Create" id="b2"
                            inlineStyle="     font-size: 15px;  background: blue;     color: white;  text-shadow: none;font-style: oblique;          "
-                           icon="#{resource['images:group-64.png']}">
+                           icon="#{resource['images:btnAdd.png']}">
                   <af:showPopupBehavior popupId="p4"/>
                 </af:button>
                 <af:spacer id="s9" width="30"/>
                 <af:button text="Edit Data" id="b17"
-                           inlineStyle="     font-size: 15px; padding-left: 127px;padding-bottom: 71px;  background: blue;     color: white;  text-shadow: none;font-style: oblique;">
+                           inlineStyle="     font-size: 15px;  background: blue;     color: white;  text-shadow: none;font-style: oblique;          ">
                   <af:showPopupBehavior popupId="p6"/>
                 </af:button>
                 <af:spacer id="s10" width="30"/>
                 <af:button text="Delete" id="b18"
-                           inlineStyle="     font-size: 15px;  padding-left: 127px;padding-bottom: 71px; background: blue;     color: white;  text-shadow: none;font-style: oblique;"/>
+                           inlineStyle="     font-size: 15px;  background: blue;     color: white;  text-shadow: none;font-style: oblique;          "/>
               </af:toolbar>
             </af:panelGroupLayout>
             <af:panelGroupLayout id="pgl11" rendered="#{pageFlowScope.empBean.btnSoapDis}"
@@ -597,7 +625,7 @@
   </af:popup>
   <!--oracle-jdev-comment:preferred-managed-bean-name:validator-->
   <af:popup childCreation="deferred" autoCancel="disabled" id="p3">
-    <af:dialog id="d3" type="ok" title="Employees" styleClass="vgofdialog">
+    <af:dialog id="d3" type="ok" title="Employees" styleClass="gofdialog">
       <f:facet name="buttonBar"/>
       <af:table value="#{bindings.data.collectionModel}" var="row" rows="#{bindings.data.rangeSize}"
                 emptyText="#{bindings.data.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
